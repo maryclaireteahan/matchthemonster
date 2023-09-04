@@ -1,3 +1,45 @@
-body {
-    background: url("../images/seamless-3289971_1280\ \(1\).png");
-}
+  @import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+  * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+  }
+
+  body {
+      min-height: 100vh;
+      min-width: 100vw;
+      background: url("/assets/images/seamless-3289971_1280\ \(1\).png");
+      font-family: 'Neucha', cursive;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+  }
+
+  header {
+    display:none;
+  }
+
+  h2 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 50px;
+      padding: 5px, 10px;
+  }
+
+  #title {
+      display: inline-flex;
+      justify-content: center;
+  }
+
+  #title-div {
+      background-color: #FEC70A;
+      box-shadow: 5px;
+      border-color: azure;
+      border: 5px;
+  }
+
+  #grid-container {
+      display: grid;
+      align-items: flex-end;
+  }
