@@ -9,7 +9,7 @@
   body {
       min-height: 100vh;
       min-width: 100vw;
-      background: url("/assets/images/seamless-3289971_1280\ \(1\).png");
+      background-color: darkgreen;
       font-family: 'Neucha', cursive;
       display: flex;
       justify-content: center;
@@ -17,7 +17,7 @@
   }
 
   header {
-    display:none;
+      display: none;
   }
 
   h2 {
