@@ -9,7 +9,7 @@
   body {
       min-height: 100vh;
       min-width: 100vw;
-      background-color: darkgreen;
+      background-color: rgb(14, 36, 14);
       font-family: 'Neucha', cursive;
       display: flex;
       justify-content: center;
@@ -25,21 +25,40 @@
       font-weight: 700;
       font-size: 50px;
       padding: 5px, 10px;
+
   }
 
   #title {
       display: inline-flex;
       justify-content: center;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
   }
 
   #title-div {
-      background-color: #FEC70A;
+      background-color: #398516;
       box-shadow: 5px;
       border-color: azure;
       border: 5px;
   }
 
-  #grid-container {
-      display: grid;
-      align-items: flex-end;
+    #instreuctions-btn {
+        align-content: flex-start;
+    }
+  #grid {
+    display: grid;
+    grid-template-columns: 80px 80px 80px 80px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: blue;
+  }
+  #grid div {
+    gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
   }
