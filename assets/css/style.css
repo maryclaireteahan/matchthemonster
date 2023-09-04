@@ -7,8 +7,6 @@
   }
 
   body {
-      min-height: 100vh;
-      min-width: 100vw;
       background-color: rgb(14, 36, 14);
       font-family: 'Neucha', cursive;
       display: flex;
@@ -22,20 +20,17 @@
 
   h2 {
       text-align: center;
-      font-weight: 700;
-      font-size: 50px;
-      padding: 5px, 10px;
-
+      font-size: 30px;
+      padding: 5px 10px;
+      margin-top;
+      65px;
   }
 
   #title {
-      display: inline-flex;
-      justify-content: center;
       position: absolute;
       top: 10%;
       left: 50%;
       transform: translate(-50%, -50%);
-
   }
 
   #title-div {
@@ -45,20 +40,60 @@
       border: 5px;
   }
 
-    #instreuctions-btn {
-        align-content: flex-start;
-    }
+  #instructions-div {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 50px;
+  }
+
+  #instructions-btn {
+      display: inline-block;
+      padding: 5px 5px;
+      font-size: 10px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      outline: none;
+      color: #fff;
+      background-color: #398516;
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px rgb(9, 23, 9);
+  }
+ .btn-text {
+    text-decoration: none;
+    color: black;
+}
+ 
+  #instructions-btn :hover {
+      background-color: #1e450c
+  }
+
+  #instructions-btn :active {
+      background-color: #1e450c;
+      box-shadow: 0 2px rgb(4, 9, 4);
+      transform: translateY(4px);
+  }
+
   #grid {
-    display: grid;
-    grid-template-columns: 80px 80px 80px 80px;
+      display: grid;
+      grid-template-columns: 60px 60px 60px 60px;
       position: absolute;
-      top: 50%;
+      top: 60%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: blue;
+      grid-gap: 20px 20px;
+
   }
+
   #grid div {
-    gap: 10px;
-    background-color: #2196F3;
-    padding: 10px;
+      gap: 10px;
+      background-color: #2196F3;
+      border-style: dotted;
+      border: 5px;
+      border-color: #398516;
+      padding: 10px;
+      align-items: center;
+      height: 60px;
+      width: 60px
   }
