@@ -18,35 +18,35 @@
       display: none;
   }
 
-  h2 {
-      text-align: center;
-      font-size: 30px;
-      padding: 5px 10px;
-      margin-top;
-      65px;
-  }
-
+  /** Heading**/
   #title {
       position: absolute;
       top: 10%;
       left: 50%;
       transform: translate(-50%, -50%);
+      border-style: solid;
   }
 
   #title-div {
       background-color: #398516;
       box-shadow: 5px;
-      border-color: azure;
       border: 5px;
   }
 
-  #instructions-div {
-      display: flex;
-      justify-content: flex-end;
+  h2 {
+      text-align: center;
+      font-size: 30px;
+      padding: 5px 10px;
+  }
+
+  /** Instructions and Restart button **/
+  #buttons-div {
+      display: inline-flex;
+      justify-content: space-between;
       margin-top: 50px;
   }
 
-  #instructions-btn {
+  .btn {
       display: inline-block;
       padding: 5px 5px;
       font-size: 10px;
@@ -54,27 +54,35 @@
       text-align: center;
       text-decoration: none;
       outline: none;
-      color: #fff;
       background-color: #398516;
-      border: none;
+      border-style: solid;
+      border-color: black;
       border-radius: 15px;
       box-shadow: 0 5px rgb(9, 23, 9);
+      color: black;
   }
- .btn-text {
-    text-decoration: none;
-    color: black;
-}
- 
-  #instructions-btn :hover {
+
+  .btn :hover {
       background-color: #1e450c
   }
 
-  #instructions-btn :active {
+  .btn :active {
       background-color: #1e450c;
       box-shadow: 0 2px rgb(4, 9, 4);
       transform: translateY(4px);
   }
 
+  #instructions-btn {
+      position: relative;
+      left: 7px;
+  }
+
+  #restart-btn {
+      position: relative;
+      right: 15px;
+  }
+
+  /** Card Game Grid **/
   #grid {
       display: grid;
       grid-template-columns: 60px 60px 60px 60px;
@@ -83,17 +91,117 @@
       left: 50%;
       transform: translate(-50%, -50%);
       grid-gap: 20px 20px;
-
   }
 
   #grid div {
       gap: 10px;
       background-color: #2196F3;
-      border-style: dotted;
-      border: 5px;
-      border-color: #398516;
+      border-style: solid;
+      border-color: black;
       padding: 10px;
       align-items: center;
       height: 60px;
-      width: 60px
+      width: 60px;
+      box-shadow: 7px 7px rgb(4, 9, 4);
+  }
+
+  /** results**/
+  #results {
+      display: inline-flex;
+      position: relative;
+      top: 30px;
+      right: 15px;
+      justify-content: space-around;
+  }
+
+  p {
+      color: #398516;
+  }
+
+  /* Media query: large or landscape phones (576px and up) -----------------------------------------------576px----------------------------------------------------------------------- */
+  @media screen and (min-width: 576px) {
+
+      h2 {
+          font-size: 35px;
+      }
+
+      #buttons-div {
+          margin-top: 30px
+      }
+
+      .btn {
+          font-size: 15px;
+      }
+
+      #results {
+          position: relative;
+      }
+
+      p {
+          font-size: 20px;
+      }
+
+  }
+
+  /* Media query: tablets and larger (768px and up) ------------------------------------------------------768px----------------------------------------------------------------------- */
+  @media screen and (min-width: 768px) {
+
+      #grid {
+          width: 475px;
+          grid-gap: 25px 70px;
+      }
+
+      #grid div {
+        height: 75px;
+        width: 85px;
+      }
+      
+      #results{
+        top: 8px;
+        left: 11px;
+        flex-direction: column;
+      }
+
+      p {
+          font-size: 27px;
+      }
+
+  }
+
+  /* Large devices (laptops and desktops, 992px and up) -----------------------------------------------992px---------------------------------------------------------------------------- */
+  @media screen and (min-width: 992px) {
+
+      h2 {
+          font-size: 55px;
+      }
+
+      #buttons-div {
+          margin-top: 85px;
+      }
+
+      .btn {
+          font-size: 25px;
+      }
+
+      #grid {
+        width: 525px;
+        grid-gap: 25px 77px;
+    }
+      
+
+      #grid div {
+
+        height: 95px;
+        width: 115px;
+    }
+    
+}
+
+  /* Large devices (laptops and desktops, 1200px and up) -----------------------------------------------1200--------------------------------------------------------------------------- */
+  @media screen and (min-width: 1200px) {
+
+    #grid {
+        width: 580px;
+        grid-gap: 21px 95px;
+    }
   }
