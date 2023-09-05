@@ -19,7 +19,7 @@
   }
 
   /** Heading**/
-  #title {
+  .title {
       position: absolute;
       top: 10%;
       left: 50%;
@@ -27,7 +27,7 @@
       border-style: solid;
   }
 
-  #title-div {
+  .title-div {
       background-color: #398516;
       box-shadow: 5px;
       border: 5px;
@@ -40,7 +40,7 @@
   }
 
   /** Instructions and Restart button **/
-  #buttons-div {
+  .buttons-div {
       display: inline-flex;
       justify-content: space-between;
       margin-top: 50px;
@@ -69,7 +69,7 @@
   .btn :active {
       background-color: #1e450c;
       box-shadow: 0 2px rgb(4, 9, 4);
-      transform: translateY(4px);
+      transform: translateY(20px);
   }
 
   #instructions-btn {
@@ -83,7 +83,7 @@
   }
 
   /** Card Game Grid **/
-  #grid {
+  .grid-container {
       display: grid;
       grid-template-columns: 60px 60px 60px 60px;
       position: absolute;
@@ -93,7 +93,7 @@
       grid-gap: 20px 20px;
   }
 
-  #grid div {
+  .grid-container div {
       gap: 10px;
       background-color: #5e0202;
       border-style: solid;
@@ -106,7 +106,7 @@
   }
 
   /** results**/
-  #results {
+  .results {
       display: inline-flex;
       position: relative;
       top: 30px;
@@ -125,7 +125,7 @@
           font-size: 35px;
       }
 
-      #buttons-div {
+      .buttons-div {
           margin-top: 30px
       }
 
@@ -133,7 +133,7 @@
           font-size: 15px;
       }
 
-      #results {
+      .results {
           position: relative;
       }
 
@@ -146,17 +146,17 @@
   /* Media query: tablets and larger (768px and up) ------------------------------------------------------768px----------------------------------------------------------------------- */
   @media screen and (min-width: 768px) {
 
-      #grid {
+      .grid-container {
           width: 475px;
-          grid-gap: 25px 70px;
+          grid-gap: 20px 70px;
       }
 
-      #grid div {
+      .grid-container div {
         height: 75px;
         width: 85px;
       }
       
-      #results{
+      .results{
         top: 8px;
         left: 11px;
         flex-direction: column;
@@ -175,7 +175,7 @@
           font-size: 55px;
       }
 
-      #buttons-div {
+      .buttons-div {
           margin-top: 85px;
       }
 
@@ -183,13 +183,13 @@
           font-size: 25px;
       }
 
-      #grid {
-        width: 525px;
-        grid-gap: 25px 77px;
+      .grid-container {
+        width: 580px;
+        grid-gap: 20px 95px;
     }
       
 
-      #grid div {
+      .grid-container div {
 
         height: 95px;
         width: 115px;
@@ -200,8 +200,8 @@
   /* Large devices (laptops and desktops, 1200px and up) -----------------------------------------------1200--------------------------------------------------------------------------- */
   @media screen and (min-width: 1200px) {
 
-    #grid {
-        width: 580px;
-        grid-gap: 21px 95px;
+    .grid-container {
+        width: 610px;
+        grid-gap: 15px 105px;
     }
   }

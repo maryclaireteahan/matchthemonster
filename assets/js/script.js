@@ -1,21 +1,21 @@
 // Get the elements from the HTML file
 const grid = document.querySelector(".grid");
-const gridContainer = document.querySelector(".grid-container");
-const instructionsButton = document.querySelector(".instructions-btn");
-const indicators = document.querySelector(".indicators");
+const cards = [
+    {image:"demon.png", value:"demon"},
+    {image:"zombie.png", value:"zombie"},
+    {image:"vampire.png", value:"vampire"},
+    {image:"witch.png", value:"witch"},
+    {image:"werewolf.png", value:"werewolf"},
+    {image:"ghost.png", value:"ghost"},
+    {image:"ogre.png", value:"ogre"},
+    {image:"dragon.png", value:"dragon"},
+];
+const cardsPicklist = [...cards, ...cards];
+const tileCount = cardsPicklist.length;
+
+const button = document.querySelector(".btn");
+const instructionsButton = document.querySelector("#instructions-btn");
+const restartButton = document.querySelector("#restart-btn");
+const actions = document.querySelector(".actions");
 const scoreElement = document.querySelector(".score");
 const timeElement = document.querySelector(".time");
-const actions = document.querySelector(".actions");
-const restartButton = document.querySelector(".restart-btn");
-
-const cards = [
-    {image:"apple.png", value:"apple"},
-    {image:"banana.png", value:"banana"},
-    {image:"cherry.png", value:"cherry"},
-    {image:"grape.png", value:"grape"},
-    {image:"lemon.png", value:"lemon"},
-    {image:"orange.png", value:"orange"},
-    {image:"pear.png", value:"pear"},
-    {image:"strawberry.png", value:"strawberry"},
-    {image:"watermelon.png", value:"watermelon"}
-   ];
