@@ -7,7 +7,7 @@
   }
 
   body {
-      background-color: rgb(14, 36, 14);
+      background:rgb(14, 36, 14) url("../images/pumpkin-face.png") no-repeat ;
       font-family: 'Neucha', cursive;
       display: flex;
       justify-content: center;
