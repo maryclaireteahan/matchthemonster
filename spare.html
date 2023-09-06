@@ -131,3 +131,141 @@ const timeElement = document.querySelector(".time");
         <img class="tile-front" src="assets/images/zombie.png" alt="Zombie">
         <img class="tile-back" src="assets/images/pumpkin-face.png" alt="Scary Face">
       </div>
+
+
+      const tilesContainer = document.querySelector(".tiles");
+const colors = [["aqua", "aquamarine", "crimson", "blue", "dodgerblue", "gold", "greenyellow", "teal"];]
+const colorsPicklist = [...colors, ...colors];
+const tileCount = colorsPicklist.length;
+
+// Game state
+let revealedCount = 0; // when game starts the number of tiles revealed is 0
+let activeTile = null; //tile user has just clicked on and looking for the next tile to match
+let awaitingEndOfMove = false; //When it is true that means the user is waiting for the unmatched turned tile to turn back over
+
+function buildTile(color) {
+    const element = document.createElement("div");
+
+    element.classList.add("tile");
+    element.setAttribute("data-color", color);
+    element.setAttribute("data-revealed", "false");
+
+    element.addEventListener("click", () => {
+        const revealed = element.getAttribute("data-revealed");
+
+    if (
+        awaitingEndOfMove
+        || revealed === "true"
+        || element === activeTile
+        ) {
+        return;
+    }
+
+    element.style.backgroundColor = color;
+
+    if (!activeTile) {
+        activeTile = element;
+
+        return;
+    }
+
+    const colorToMatch = activeTile.getAttribute("data-color");
+
+    if (colorToMatch === color) {
+        activeTile.setAttribute("data-revealed", "true");
+        element.setAttribute("data-revealed", "true");
+
+        awaitingEndOfMove = false;
+        activeTile = null;
+        revealedCount += 2;
+
+        if (revealedCount === tileCount) {
+            alert("You Win! Refresh to play again.");
+        }
+
+        return;
+    }
+
+    awaitingEndOfMove = true;
+
+    setTimeout(() => {
+        element.style.backgroundColor = null;
+        activeTile.style.backgroundColor = null;
+
+        awaitingEndOfMove = false;
+        activeTile = null;
+    }, 1000);
+
+});
+
+return element;
+}
+
+// build up tiles
+for (let i = 0; i < tileCount; i++) {
+    const randomIndex = Math.floor(Math.random() * colorsPicklist.length);
+    const color = colorsPicklist[randomIndex];
+    const tile = buildTile(color);
+
+    colorsPicklist.splice(randomIndex, 1);
+    tilesContainer.appendChild(tile);
+}
+
+
+
+
+
+
+const gridContainer = document.querySelector(".grid-container");
+const monsters = [];
+
+// images in array
+
+monsters.push(['../images/demon.png', 'Demon']);
+monsters.push(['../images/zombie.png', 'Zombie']);
+monsters.push(['../images/witch.png', 'witch']);
+monsters.push(['../images/ghost.png', 'ghost']);
+monsters.push(['../images/werewolf.png', 'werewolf']);
+monsters.push(['../images/vampire.png', 'vampire']);
+monsters.push(['../images/ogre.png', 'ogre']);
+monsters.push(['../images/dragon.png', 'dragon']);
+
+const monstersPicklist = [...monsters, ...monsters];
+const tileCount = monstersPicklist.length;
+
+console.log(monstersPicklist);
+
+let revealedTileCount = 0;
+let activeTile = null;
+let awaitingEndOfMove = false;
+
+// create tiles
+function buildTile(monster) {
+    const element = document.createElement("div");
+
+    element.classList.add("tile");
+    element.setAttribute("data-monster", monster);
+
+    element.addEventListener("click", () => {
+        if (awaitingEndOfMove) {
+            return;
+        }
+
+        element.style.backgroundColor = monster;
+    });
+
+    return element;
+}
+
+// add the tiles to grid
+for (let i = 0; i < tileCount; i++) {
+    const randomIndex = Math.floor(Math.random() * monstersPicklist.length);
+    const monster = monstersPicklist[randomIndex];
+    const tile = buildTile(monster);
+
+    monstersPicklist.splice(randomIndex, 1);
+    gridContainer.appendChild(tile);
+}
+
+
+
