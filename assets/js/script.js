@@ -2,11 +2,12 @@
 
 function instructionsBtnClick(event) {
 
+    document.getElementById("instructions-btn").disabled = true;
     // Create the a Div
-    const instructions = document.createElement('div');
+    let instructions = document.createElement('div');
 
     // Put the Div inside the HTML element instructions-div
-    const instructionsDiv = document.getElementById('instructions-div');
+    let instructionsDiv = document.getElementById('instructions-div');
     instructionsDiv.appendChild(instructions);
 
     // Put a h3 element inside the new Div
@@ -27,52 +28,25 @@ function instructionsBtnClick(event) {
         instructionsList.appendChild(listItem);
     };
 
-
     instructions.appendChild(instructionsList);
 
-
-    if (instructionsBtn.addEventListener('click', instructionsBtnClick)
-        === true) {
-        // Change its background color and width
-        instructions.style.display = "none";
-    } else {
-        // instructions style
-
-
-
-
-
-
-    
-
-}
-
-
-//add a button to close the instructions
-
-//create the button
-const closeBtn = document.createElement('button');
-
-// Put the Div inside the HTML element instructions-div
-instructions.appendChild(closeBtn);
-
-closeBtn.addEventListener('click', closeBtnClick);
-closeBtn.innerHTML = "Close";
-function closeBtnClick(event) {
-    if (closeBtn.addEventListener('click', closeBtnClick)
-        === true) {
-        // Change its background color and width
-        instructions.style.display = "none";
-    } else {
-        return;
-    }
-}
-
-instructions.appendChild(closeBtn);
-
+    //create the button
+    let closeBtn = document.createElement('button');
+    closeBtn.classList.add("close-btn");
+    instructions.appendChild(closeBtn);
+    closeBtn.innerHTML = "Close";
 }
 
 // select HTML button element and assign an event listener
 let instructionsBtn = document.getElementById('instructions-btn');
 
 instructionsBtn.addEventListener('click', instructionsBtnClick);
+
+function closeBtnClick(event) {
+    let closeBtn = document.getElementsByClassName('close-btn');
+    let instructionsDiv = document.getElementById('instructions-div');
+
+    instructionsDiv.style.display = "none";
+}
+let closeBtn = document.getElementsByClassName('close-btn');
+closeBtn.addEventListener('click', closeBtnClick);

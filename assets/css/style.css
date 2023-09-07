@@ -4,11 +4,11 @@
       padding: 0;
       margin: 0;
       box-sizing: border-box;
+      font-family: 'Neucha', serif;
   }
 
   body {
       background: rgb(14, 36, 14) url("../images/pumpkin-face.png") no-repeat;
-      font-family: 'Neucha', cursive;
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -22,7 +22,7 @@
   .title {
       position: absolute;
       top: 10%;
-      left: 50%;
+      left: 53%;
       transform: translate(-50%, -50%);
       border-style: solid;
   }
@@ -46,10 +46,11 @@
       margin-top: 50px;
   }
 
-  .btn, button {
-      display: inline-block;
+  .btn,
+  .close-btn {
+      display: inline-flex;
       padding: 5px 5px;
-      font-size: 10px;
+      font-size: 15px;
       cursor: pointer;
       text-align: center;
       text-decoration: none;
@@ -60,13 +61,26 @@
       border-radius: 15px;
       box-shadow: 0 5px rgb(9, 23, 9);
       color: black;
+      align-self: center;
+      margin-bottom: 25px;
+      justify-content: center;
   }
 
-  .btn :hover, button :hover {
+  .close-btn {
+      width: 80px;
+  }
+
+  .btn {
+      width: fit-content;
+  }
+
+  .btn :hover,
+  .close-btn :hover {
       background-color: #1e450c
   }
 
-  .btn :active, button :active {
+  .btn :active,
+  .close-btn :active {
       background-color: #1e450c;
       box-shadow: 0 2px rgb(4, 9, 4);
       transform: translateY(20px);
@@ -82,12 +96,7 @@
       right: 15px;
   }
 
-    button {
-        display: flex;
-        align-self: center;
-        max-width: fit-content;
-        margin-bottom: 10px;
-    }
+
   /* Card Game Grid */
   .grid-container {
       display: grid;
@@ -130,8 +139,8 @@
   /* instructions */
 
   h3 {
-        align-self: center;
-        padding-top: 5px;
+      align-self: center;
+      padding-top: 5px;
   }
 
   #instructions-div {
@@ -151,9 +160,9 @@
   }
 
   #instructions-div div {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
   }
 
   ol {
@@ -167,6 +176,10 @@
 
   /* Media query: large or landscape phones (576px and up) -----------------------------------------------576px----------------------------------------------------------------------- */
   @media screen and (min-width: 576px) {
+
+      .title {
+          left: 50%;
+      }
 
       h2 {
           font-size: 35px;
