@@ -84,7 +84,7 @@
 
   /* Card Game Grid */
   .grid-container {
-    background-color: #5e0202;
+    background-color: ;
       display: grid;
       grid-template-columns: 60px 60px 60px 60px;
       position: absolute;
@@ -112,7 +112,7 @@
   /* results */
   .results {
       display: inline-flex;
-      position: relative;
+      position: ;
       top: 30px;
       right: 15px;
       justify-content: space-around;
@@ -123,9 +123,7 @@
   }
 
   #instructions-div {
-    background-color: aqua;
     display: flex;
-    position: relative;
     height: 260px;
     width: 255px;
     align-self: center; 

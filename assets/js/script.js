@@ -1,74 +1,84 @@
-/**const instructions = document.createElement('div');
-
-const instructionsBtn = document.getElementById("instructions-btn");
 
 
+function instructionsBtnClick(event) {
 
-
-  instructions.textContent = 'Click 2 cards to turn them over and reveal their fruit.'
-  /** If the fruits match, they stay turned over.
-  If they do not match the cards are turned back.
-  You must try remember where you have seen which fruits, so you can use them to make a match.
-  
-  You must try to match all the fruit in as few clicks as possible.';**
-
-  const instructionsDiv = document.getElementById('instructions-div');
-  instructionsDiv.appendChild(instructions);
-
-**/
-
-function instructionsBtnClick (event) {
+    // Create the a Div
     const instructions = document.createElement('div');
 
+    // Put the Div inside the HTML element instructions-div
     const instructionsDiv = document.getElementById('instructions-div');
     instructionsDiv.appendChild(instructions);
 
+    // Put a h3 element inside the new Div
     let instructionsHeading = document.createElement("h3");
     instructionsHeading.innerHTML = "Instructions:";
     instructions.appendChild(instructionsHeading);
 
-    letinstructionsList = document.createElement("ol");
+    // Create and put an ordered list under the h3 element
+    let instructionsList = document.createElement("ol");
 
-    let listItems = ['Click 2 cards to turn them over and reveal their fruit.',
-    'If the fruits match, they stay turned over.',  'If they do not match the cards are turned back.',
-    'You must try remember where you have seen which fruits, so you can use them to make a match.'
+    let listItems = ['Click 2 cards to turn them over and reveal their monsters.',
+        'If the monsters match, they stay turned over.', 'If they do not match the cards are turned back.',
+        'You must try remember where you have seen which monsters, so you can use them to make a match.'
     ]
-    listItems.innerHTML = listItems;
-
-    instructionsHeading.appendChild(listItems);
-
-  }
-  
-  let instructionsBtn = document.getElementById('instructions-btn');
-
-  instructionsBtn.addEventListener('click', instructionsBtnClick); 
-
-
-
-/**
-    let body = document.body;
-
-    // Create a new heading
-    let newHeading = document.createElement("h3");
-
-    // Set its innerHTML
-    newHeading.innerHTML = "Shopping List:";
-
-    // Add it to the body
-    body.appendChild(newHeading);
-
-    // Now make the new list
-    let shoppingList = document.createElement('ul');
-
-    // Create an array of items to add
-    let shoppingItems = ['Milk', 'Butter', 'Eggs'];
-
-    // Loop through the array and create <li> elements
-    for (let i = 0; i < shoppingItems.length; i++) {
+    for (let i = 0; i < listItems.length; i++) {
         let listItem = document.createElement('li');
-        listItem.innerHTML = shoppingItems[i];
-        shoppingList.appendChild(listItem);
+        listItem.innerHTML = listItems[i];
+        instructionsList.appendChild(listItem);
     };
 
-    // Now append the whole new list to the body
-    body.appendChild(shoppingList);**//
+
+    instructions.appendChild(instructionsList);
+
+
+    if (instructionsBtn.addEventListener('click', instructionsBtnClick)
+        === true) {
+        // Change its background color and width
+        instructions.style.display = "none";
+    } else {
+        // instructions style
+        instructionsDiv.style.backgroundColor = "#7c0200";
+        instructionsDiv.style.display = "flex";
+        instructionsDiv.style.maxHeight = "auto";
+        instructionsDiv.style.maxWidth = "auto";
+        instructionsDiv.style.alignSelf = "center";
+        instructionsDiv.style.justifyContent = "column";
+        instructionsDiv.style.alignContent = "center";
+        instructionsDiv.style.margin = "40px 10px";
+
+
+        instructionsList.style.padding = "20px 30px 20px";
+        instructionsList.style.fontSize = "1.5rem";
+        instructionsList.style.letterSpacing = "1px";
+        instructionsList.style.lineHeight = "1.5";
+    }
+
+
+    //add a button to close the instructions
+
+    //create the button
+    const closeBtn = document.createElement('button');
+
+    // Put the Div inside the HTML element instructions-div
+    instructions.appendChild(closeBtn);
+
+    closeBtn.addEventListener('click', closeBtnClick);
+    closeBtn.innerHTML = "Close";
+    function closeBtnClick(event) {
+        if (closeBtn.addEventListener('click', closeBtnClick)
+            === true) {
+            // Change its background color and width
+            instructions.style.display = "none";
+        } else {
+            return;
+        }
+    }
+
+    instructions.appendChild(closeBtn);
+
+}
+
+// select HTML button element and assign an event listener
+let instructionsBtn = document.getElementById('instructions-btn');
+
+instructionsBtn.addEventListener('click', instructionsBtnClick);
