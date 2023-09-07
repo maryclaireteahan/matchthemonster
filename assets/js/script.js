@@ -1,8 +1,7 @@
-
-
+// INSTRUCTION BUTTON
 function instructionsBtnClick(event) {
 
-    document.getElementById("instructions-btn").disabled = true;
+    //disable instruction button after one click
     // Create the a Div
     let instructions = document.createElement('div');
 
@@ -35,6 +34,13 @@ function instructionsBtnClick(event) {
     closeBtn.classList.add("close-btn");
     instructions.appendChild(closeBtn);
     closeBtn.innerHTML = "Close";
+
+    //remove element when close button clicked and reenable instructions button
+    function closeBtnClick(event) {
+        instructionsDiv.removeChild(instructions);
+        document.getElementById("instructions-btn").disabled = false;
+    }
+    closeBtn.addEventListener('click', closeBtnClick);
 }
 
 // select HTML button element and assign an event listener
@@ -42,11 +48,4 @@ let instructionsBtn = document.getElementById('instructions-btn');
 
 instructionsBtn.addEventListener('click', instructionsBtnClick);
 
-function closeBtnClick(event) {
-    let closeBtn = document.getElementsByClassName('close-btn');
-    let instructionsDiv = document.getElementById('instructions-div');
-
-    instructionsDiv.style.display = "none";
-}
-let closeBtn = document.getElementsByClassName('close-btn');
-closeBtn.addEventListener('click', closeBtnClick);
+// GRID
