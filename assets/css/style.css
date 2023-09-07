@@ -39,14 +39,14 @@
       padding: 5px 10px;
   }
 
-  /** Instructions and Restart button **/
+  /** Instructions, close instructions and Restart button **/
   .buttons-div {
       display: inline-flex;
       justify-content: space-between;
       margin-top: 50px;
   }
 
-  .btn {
+  .btn, button {
       display: inline-block;
       padding: 5px 5px;
       font-size: 10px;
@@ -62,11 +62,11 @@
       color: black;
   }
 
-  .btn :hover {
+  .btn :hover, button :hover {
       background-color: #1e450c
   }
 
-  .btn :active {
+  .btn :active, button :active {
       background-color: #1e450c;
       box-shadow: 0 2px rgb(4, 9, 4);
       transform: translateY(20px);
@@ -82,9 +82,11 @@
       right: 15px;
   }
 
+    button {
+        display: flex;
+    }
   /* Card Game Grid */
   .grid-container {
-    background-color: #;
       display: grid;
       grid-template-columns: 60px 60px 60px 60px;
       position: absolute;
@@ -122,12 +124,35 @@
       color: #398516;
   }
 
+  /* instructions */
+
   #instructions-div {
-    display: flex;
-    height: fit-content;
-    width: fit-content;
-    align-self: center; 
-}
+      display: flex;
+      height: fit-content;
+      width: fit-content;
+      align-self: center;
+      background-color: #7c0200;
+      flex-direction: column;
+      align-content: center;
+      margin: 40px 10px;
+      z-index: 1;
+  }
+
+  #instructions-div div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  }
+  
+  ol {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 30px 20px;
+      z-index: 2;
+      font-size: 20px;
+      letter-spacing: 1px;
+  }
+
   /* Media query: large or landscape phones (576px and up) -----------------------------------------------576px----------------------------------------------------------------------- */
   @media screen and (min-width: 576px) {
 
