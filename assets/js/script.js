@@ -37,23 +37,9 @@ function instructionsBtnClick(event) {
         instructions.style.display = "none";
     } else {
         // instructions style
-        instructionsDiv.style.backgroundColor = "#7c0200";
-        instructionsDiv.style.display = "flex";
-        instructionsDiv.style.maxHeight = "auto";
-        instructionsDiv.style.maxWidth = "fit-content";
-        instructionsDiv.style.alignSelf = "center";
-        instructionsDiv.style.flexDirection = "column";
-        instructionsDiv.style.alignContent = "center";
-        instructionsDiv.style.margin = "40px 10px";
-        instructionsDiv.style.zIndex = "1";
 
 
-        instructionsList.style.display = "flex";
-        instructionsList.style.flexDirection = "column";
-        instructionsList.style.padding = "20px 30px 20px";
-        instructionsList.style.zIndex = "2";        
-        instructionsList.style.fontSize = "20px";
-        instructionsList.style.letterSpacing = "1px";
+
 
 
 
