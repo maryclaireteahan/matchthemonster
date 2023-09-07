@@ -84,6 +84,7 @@
 
   /* Card Game Grid */
   .grid-container {
+    background-color: #5e0202;
       display: grid;
       grid-template-columns: 60px 60px 60px 60px;
       position: absolute;
@@ -91,6 +92,8 @@
       left: 50%;
       transform: translate(-50%, -50%);
       grid-gap: 20px 20px;
+      height: 100px;
+      width: 100px;
   }
 
   /* Define the grid cell styles */
@@ -119,6 +122,14 @@
       color: #398516;
   }
 
+  #instructions-div {
+    background-color: aqua;
+    display: flex;
+    position: relative;
+    height: 260px;
+    width: 255px;
+    align-self: center; 
+}
   /* Media query: large or landscape phones (576px and up) -----------------------------------------------576px----------------------------------------------------------------------- */
   @media screen and (min-width: 576px) {
 
