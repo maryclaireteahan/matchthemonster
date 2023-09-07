@@ -84,6 +84,9 @@
 
     button {
         display: flex;
+        align-self: center;
+        max-width: fit-content;
+        margin-bottom: 10px;
     }
   /* Card Game Grid */
   .grid-container {
@@ -126,6 +129,11 @@
 
   /* instructions */
 
+  h3 {
+        align-self: center;
+        padding-top: 5px;
+  }
+
   #instructions-div {
       display: flex;
       height: fit-content;
@@ -136,6 +144,10 @@
       align-content: center;
       margin: 40px 10px;
       z-index: 1;
+      border-style: solid;
+      border-color: black;
+      border-radius: 15px;
+      box-shadow: 0 5px rgb(9, 23, 9);
   }
 
   #instructions-div div {
@@ -143,7 +155,7 @@
   justify-content: center;
   flex-direction: column;
   }
-  
+
   ol {
       display: flex;
       flex-direction: column;
