@@ -40,41 +40,49 @@ function instructionsBtnClick(event) {
         instructionsDiv.style.backgroundColor = "#7c0200";
         instructionsDiv.style.display = "flex";
         instructionsDiv.style.maxHeight = "auto";
-        instructionsDiv.style.maxWidth = "auto";
+        instructionsDiv.style.maxWidth = "fit-content";
         instructionsDiv.style.alignSelf = "center";
-        instructionsDiv.style.justifyContent = "column";
+        instructionsDiv.style.flexDirection = "column";
         instructionsDiv.style.alignContent = "center";
         instructionsDiv.style.margin = "40px 10px";
+        instructionsDiv.style.zIndex = "1";
 
 
+        instructionsList.style.display = "flex";
+        instructionsList.style.flexDirection = "column";
         instructionsList.style.padding = "20px 30px 20px";
-        instructionsList.style.fontSize = "1.5rem";
+        instructionsList.style.zIndex = "2";        
+        instructionsList.style.fontSize = "20px";
         instructionsList.style.letterSpacing = "1px";
-        instructionsList.style.lineHeight = "1.5";
+
+
+
+    
+
+}
+
+
+//add a button to close the instructions
+
+//create the button
+const closeBtn = document.createElement('button');
+
+// Put the Div inside the HTML element instructions-div
+instructions.appendChild(closeBtn);
+
+closeBtn.addEventListener('click', closeBtnClick);
+closeBtn.innerHTML = "Close";
+function closeBtnClick(event) {
+    if (closeBtn.addEventListener('click', closeBtnClick)
+        === true) {
+        // Change its background color and width
+        instructions.style.display = "none";
+    } else {
+        return;
     }
+}
 
-
-    //add a button to close the instructions
-
-    //create the button
-    const closeBtn = document.createElement('button');
-
-    // Put the Div inside the HTML element instructions-div
-    instructions.appendChild(closeBtn);
-
-    closeBtn.addEventListener('click', closeBtnClick);
-    closeBtn.innerHTML = "Close";
-    function closeBtnClick(event) {
-        if (closeBtn.addEventListener('click', closeBtnClick)
-            === true) {
-            // Change its background color and width
-            instructions.style.display = "none";
-        } else {
-            return;
-        }
-    }
-
-    instructions.appendChild(closeBtn);
+instructions.appendChild(closeBtn);
 
 }
 
