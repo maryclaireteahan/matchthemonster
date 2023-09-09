@@ -52,7 +52,20 @@ instructionsBtn.addEventListener("click", instructionsBtnClick);
 
 // GRID
 
+let cards = [
+    { url: '../images/demon.png', alt: 'Demon' },
+    { url: '../images/frankenstein.png', alt: 'Frankenstein' },
+    { url: '../images/goblin.png', alt: 'Goblin' },
+    { url: '../images/mummy.png', alt: 'Mummy' },
+    { url: '../images/vampire.png', alt: 'Vampire' },
+    { url: '../images/werewolf.png', alt: 'Werewolf' },
+    { url: '../images/witch.png', alt: 'Witch' },
+    { url: '../images/zombie.png', alt: 'Zombie' },
+]
+console.log(cards);
+
 let gridContainer = document.createElement("div");
 let gridContainerDiv = document.getElementById("grid-container-div");
 gridContainer.classList.add("grid-container");
 gridContainerDiv.appendChild(gridContainer);
+
