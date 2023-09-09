@@ -52,20 +52,66 @@ instructionsBtn.addEventListener("click", instructionsBtnClick);
 
 // GRID
 
-let cards = [
-    { url: '../images/demon.png', alt: 'Demon' },
-    { url: '../images/frankenstein.png', alt: 'Frankenstein' },
-    { url: '../images/goblin.png', alt: 'Goblin' },
-    { url: '../images/mummy.png', alt: 'Mummy' },
-    { url: '../images/vampire.png', alt: 'Vampire' },
-    { url: '../images/werewolf.png', alt: 'Werewolf' },
-    { url: '../images/witch.png', alt: 'Witch' },
-    { url: '../images/zombie.png', alt: 'Zombie' },
-]
-console.log(cards);
+let gridContainerDiv = document.getElementById("grid-container-div");
 
 let gridContainer = document.createElement("div");
-let gridContainerDiv = document.getElementById("grid-container-div");
 gridContainer.classList.add("grid-container");
 gridContainerDiv.appendChild(gridContainer);
+
+//add monsters to the grid
+let monsters = [
+    { src: '/assets/images/demon.png', alt: 'Demon', },
+    { src: '/assets/images/frankenstein.png', alt: 'Frankenstein' },
+    { src: '/assets/images/goblin.png', alt: 'Goblin' },
+    { src: '/assets/images/mummy.png', alt: 'Mummy' },
+    { src: '/assets/images/vampire.png', alt: 'Vampire' },
+    { src: '/assets/images/werewolf.png', alt: 'Werewolf' },
+    { src: '/assets/images/witch.png', alt: 'Witch' },
+    { src: '/assets/images/zombie.png', alt: 'Zombie' },
+    { src: '/assets/images/demon.png', alt: 'Demon' },
+    { src: '/assets/images/frankenstein.png', alt: 'Frankenstein' },
+    { src: '/assets/images/goblin.png', alt: 'Goblin' },
+    { src: '/assets/images/mummy.png', alt: 'Mummy' },
+    { src: '/assets/images/vampire.png', alt: 'Vampire' },
+    { src: '/assets/images/werewolf.png', alt: 'Werewolf' },
+    { src: '/assets/images/witch.png', alt: 'Witch' },
+    { src: '/assets/images/zombie.png', alt: 'Zombie' },
+]
+
+const shuffleMonsters = monsters => {
+    for (let i = monsters.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let k = monsters[i];
+        monsters[i] = monsters[j];
+        monsters[j] = k;
+    }
+}
+shuffleMonsters(monsters);
+
+for (let monster of monsters) {
+    // Create an image element with the url and alt attributes for the front of the car
+    let card = document.createElement("div");
+
+    let monsterImg = document.createElement("img");
+    monsterImg.src = monster.src;
+    monsterImg.alt = monster.alt;
+    monsterImg.classList.add("card-front");
+
+    card.appendChild(monsterImg);
+
+    // Append the image element to the gridContainer div
+    gridContainer.appendChild(card);
+
+    // Create an image element with the url and alt attributes for the back of the card
+
+    let backImg = document.createElement("img");
+    backImg.src = '/assets/images/pumpkin-face.png';
+    backImg.alt = "scary face";
+    backImg.classList.add("card-back");
+
+    card.appendChild(backImg);
+
+
+}
+
 

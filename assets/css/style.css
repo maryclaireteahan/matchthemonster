@@ -33,7 +33,7 @@
       border: 5px;
   }
 
-  h2 {
+  h1 {
       text-align: center;
       font-size: 30px;
       padding: 5px 10px;
@@ -97,75 +97,80 @@
   }
 
   h3 {
-    align-self: center;
-    padding-top: 5px;
-}
+      align-self: center;
+      padding-top: 5px;
+  }
 
-#instructions-div {
-    display: flex;
-    height: fit-content;
-    width: fit-content;
-    align-self: center;
-    flex-direction: column;
-    align-content: center;
-    margin: -30px 10px;
-    z-index: 1;
-}
+  #instructions-div {
+      display: flex;
+      height: fit-content;
+      width: fit-content;
+      align-self: center;
+      flex-direction: column;
+      align-content: center;
+      margin: -30px 10px;
+      z-index: 1;
+  }
 
-#instructions-div div {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-style: solid;
-    border-color: black;
-    border-radius: 15px;
-    box-shadow: 0 5px rgb(9, 23, 9);
-    z-index: 2;
-    background-color: #7c0200;
-}
+  #instructions-div div {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      border-style: solid;
+      border-color: black;
+      border-radius: 15px;
+      box-shadow: 0 5px rgb(9, 23, 9);
+      z-index: 2;
+      background-color: #7c0200;
+  }
 
-ol {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 30px 20px;
-    z-index: 2;
-    font-size: 20px;
-    letter-spacing: 1px;
-}
+  ol {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 30px 20px;
+      z-index: 2;
+      font-size: 20px;
+      letter-spacing: 1px;
+  }
 
   /* Card Game Grid */
   .grid-container {
-    background-color: #5e0202;
-    border-style: solid;
-    border-color: black;
-    border-radius: 15px;
-    box-shadow: 0 5px rgb(9, 23, 9);
-    display: grid;
-    grid-template-rows: 65px 65px 65px 65px;
-    position: absolute;
-    top: 63%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    grid-gap: 10px 10px;
-    height: max-content;
-    width: max-content;
-    grid-template-columns: 60px 60px 60px 60px;
-    padding: 10px;
-  }
-
-  /* Define the grid cell styles */
-  .cards {
-      gap: 10px;
       background-color: #5e0202;
       border-style: solid;
       border-color: black;
+      border-radius: 15px;
+      box-shadow: 0 5px rgb(9, 23, 9);
+      display: grid;
+      grid-template-rows: 65px 65px 65px 65px;
+      position: absolute;
+      top: 63%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      grid-gap: 10px 10px;
+      height: max-content;
+      width: max-content;
+      grid-template-columns: 60px 60px 60px 60px;
       padding: 10px;
-      align-items: center;
-      height: 60px;
-      width: 60px;
-      box-shadow: 7px 7px rgb(4, 9, 4);
   }
 
+  /* Define the grid cell styles */
+
+  .card {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    margin: 10px;
+    perspective: 1000px;
+    
+  }
+  .card-front,
+  .card-back {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+ 
   /* results */
   .results {
 
@@ -186,7 +191,7 @@ ol {
           left: 50%;
       }
 
-      h2 {
+      h1 {
           font-size: 35px;
       }
 
@@ -236,7 +241,7 @@ ol {
   /* Large devices (laptops and desktops, 992px and up) -----------------------------------------------992px---------------------------------------------------------------------------- */
   @media screen and (min-width: 992px) {
 
-      h2 {
+      h1 {
           font-size: 55px;
       }
 
