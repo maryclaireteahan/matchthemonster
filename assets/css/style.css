@@ -98,6 +98,11 @@
 
   /* Card Game Grid */
   .grid-container {
+      background-color: #5e0202;
+      border-style: solid;
+      border-color: black;
+      border-radius: 15px;
+      box-shadow: 0 5px rgb(9, 23, 9);
       display: grid;
       grid-template-columns: 60px 60px 60px 60px;
       position: absolute;
@@ -124,6 +129,7 @@
 
   /* results */
   .results {
+
       display: inline-flex;
       position: relative;
       top: 30px;
