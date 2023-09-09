@@ -22,7 +22,7 @@
   .title {
       position: absolute;
       top: 10%;
-      left: 53%;
+      left: 50%;
       transform: translate(-50%, -50%);
       border-style: solid;
   }
@@ -50,7 +50,7 @@
   .close-btn {
       display: inline-flex;
       padding: 5px 5px;
-      font-size: 15px;
+      font-size: 12px;
       cursor: pointer;
       text-align: center;
       text-decoration: none;
@@ -96,26 +96,65 @@
       right: 15px;
   }
 
+  h3 {
+    align-self: center;
+    padding-top: 5px;
+}
+
+#instructions-div {
+    display: flex;
+    height: fit-content;
+    width: fit-content;
+    align-self: center;
+    flex-direction: column;
+    align-content: center;
+    margin: -30px 10px;
+    z-index: 1;
+}
+
+#instructions-div div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+    box-shadow: 0 5px rgb(9, 23, 9);
+    z-index: 2;
+    background-color: #7c0200;
+}
+
+ol {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px 20px;
+    z-index: 2;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
   /* Card Game Grid */
   .grid-container {
-      background-color: #5e0202;
-      border-style: solid;
-      border-color: black;
-      border-radius: 15px;
-      box-shadow: 0 5px rgb(9, 23, 9);
-      display: grid;
-      grid-template-columns: 60px 60px 60px 60px;
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      grid-gap: 20px 20px;
-      height: 100px;
-      width: 100px;
+    background-color: #5e0202;
+    border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+    box-shadow: 0 5px rgb(9, 23, 9);
+    display: grid;
+    grid-template-rows: 65px 65px 65px 65px;
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    grid-gap: 10px 10px;
+    height: max-content;
+    width: max-content;
+    grid-template-columns: 60px 60px 60px 60px;
+    padding: 10px;
   }
 
   /* Define the grid cell styles */
-  .tiles {
+  .cards {
       gap: 10px;
       background-color: #5e0202;
       border-style: solid;
@@ -131,7 +170,6 @@
   .results {
 
       display: inline-flex;
-      position: relative;
       top: 30px;
       right: 15px;
       justify-content: space-around;
@@ -139,44 +177,6 @@
 
   p {
       color: #398516;
-  }
-
-  /* instructions */
-
-  h3 {
-      align-self: center;
-      padding-top: 5px;
-  }
-
-  #instructions-div {
-      display: flex;
-      height: fit-content;
-      width: fit-content;
-      align-self: center;
-      background-color: #7c0200;
-      flex-direction: column;
-      align-content: center;
-      margin: 40px 10px;
-      z-index: 1;
-      border-style: solid;
-      border-color: black;
-      border-radius: 15px;
-      box-shadow: 0 5px rgb(9, 23, 9);
-  }
-
-  #instructions-div div {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-  }
-
-  ol {
-      display: flex;
-      flex-direction: column;
-      padding: 20px 30px 20px;
-      z-index: 2;
-      font-size: 20px;
-      letter-spacing: 1px;
   }
 
   /* Media query: large or landscape phones (576px and up) -----------------------------------------------576px----------------------------------------------------------------------- */
