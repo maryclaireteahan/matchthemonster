@@ -8,7 +8,7 @@
   }
 
   body {
-      background: rgb(14, 36, 14) url("../images/pumpkin-face.png") no-repeat;
+      background: rgb(14, 36, 14) url("../images/face.png") no-repeat;
       display: flex;
       justify-content: center;
       flex-direction: column;

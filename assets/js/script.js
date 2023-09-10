@@ -60,22 +60,22 @@ gridContainerDiv.appendChild(gridContainer);
 
 //add monsters to the grid
 let monsters = [
-    { src: "./assets/images/demon.png", alt: "Demon" },
-    { src: "./assets/images/frankenstein.png", alt: "Frankenstein" },
-    { src: "./assets/images/goblin.png", alt: "Goblin" },
-    { src: "./assets/images/mummy.png", alt: "Mummy" },
-    { src: "./assets/images/vampire.png", alt: "Vampire" },
-    { src: "./assets/images/werewolf.png", alt: "Werewolf" },
-    { src: "./assets/images/witch.png", alt: "Witch" },
-    { src: "./assets/images/zombie.png", alt: "Zombie" },
-    { src: "./assets/images/demon.png", alt: "Demon" },
-    { src: "./assets/images/frankenstein.png", alt: "Frankenstein" },
-    { src: "./assets/images/goblin.png", alt: "Goblin" },
-    { src: "./assets/images/mummy.png", alt: "Mummy" },
-    { src: "./assets/images/vampire.png", alt: "Vampire" },
-    { src: "./assets/images/werewolf.png", alt: "Werewolf" },
-    { src: "./assets/images/witch.png", alt: "Witch" },
-    { src: "./assets/images/zombie.png", alt: "Zombie" },
+    { src: "./assets/images/demon.png", alt: "Demon", dataName: "Demon" },
+    { src: "./assets/images/frankenstein.png", alt: "Frankenstein", dataName: "Frankenstein" },
+    { src: "./assets/images/goblin.png", alt: "Goblin", dataName: "Goblin" },
+    { src: "./assets/images/mummy.png", alt: "Mummy", dataName: "Mummy" },
+    { src: "./assets/images/vampire.png", alt: "Vampire", dataName: "Vampire" },
+    { src: "./assets/images/werewolf.png", alt: "Werewolf", dataName: "Werewolf" },
+    { src: "./assets/images/witch.png", alt: "Witch", dataName: "Witch" },
+    { src: "./assets/images/zombie.png", alt: "Zombie", dataName: "Zombie" },
+    { src: "./assets/images/demon.png", alt: "Demon", dataName: "Demon" },
+    { src: "./assets/images/frankenstein.png", alt: "Frankenstein", dataName: "Frankenstein" },
+    { src: "./assets/images/goblin.png", alt: "Goblin", dataName: "Goblin" },
+    { src: "./assets/images/mummy.png", alt: "Mummy", dataName: "Mummy" },
+    { src: "./assets/images/vampire.png", alt: "Vampire", dataName: "Vampire" },
+    { src: "./assets/images/werewolf.png", alt: "Werewolf", dataName: "Werewolf" },
+    { src: "./assets/images/witch.png", alt: "Witch", dataName: "Witch" },
+    { src: "./assets/images/zombie.png", alt: "Zombie", dataName: "Zombie" },
 ]
 
 const shuffleMonsters = monsters => {
@@ -96,6 +96,7 @@ for (let monster of monsters) {
     let monsterImg = document.createElement("img");
     monsterImg.src = monster.src;
     monsterImg.alt = monster.alt;
+    monsterImg.dataset.dataName = monster.dataName;
     monsterImg.classList.add("card-front");
 
     card.appendChild(monsterImg);
@@ -122,7 +123,30 @@ let firstCard, secondCard;
 
 function flipCard() {
     this.classList.toggle("flipCard");
+    if (!hasFlippedCard) {
+        //first click
+        hasFlippedCard = true;
+        secondCard = this;
+    } else {
+        //second click
+        hasFlippedCard = false;
+        firstCard = this;
+
+        let firstDataName = firstCard.children[0].dataset.dataName;
+        let secondDataName = secondCard.children[0].dataset.dataName;
+
+        // Log the dataName to the console
+        console.log(firstDataName);
+        console.log(secondDataName);
+
+        if (firstDataName === secondDataName){
+firstCard.removeEventListener("click", flipCard)
+secondCard.removeEventListener("click", flipCard)
+        }
+        console.log('function excuted')
+    }
 }
+
 for (let card of cards) {
     card.addEventListener("click", flipCard);
 }
