@@ -91,6 +91,9 @@ shuffleMonsters(monsters);
 for (let monster of monsters) {
     // Create an image element with the url and alt attributes for the front of the car
     let card = document.createElement("div");
+    card.classList.add("card");
+    card.classList.add("card-inner");
+
 
     let monsterImg = document.createElement("img");
     monsterImg.src = monster.src;
