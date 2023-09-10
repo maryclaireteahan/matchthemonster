@@ -117,41 +117,61 @@ for (let monster of monsters) {
 let cards = document.getElementsByClassName("card");
 
 let hasFlippedCard = false;
+let lockBoard = false;
 let firstCard, secondCard;
 
 
 
 function flipCard() {
+    if (lockBoard) return;
+    if (this === firstCard) return;
+
     this.classList.toggle("flip");
 
     if (!hasFlippedCard) {
         //first click
         hasFlippedCard = true;
-        secondCard = this;
-    } else {
-        //second click
-        hasFlippedCard = false;
         firstCard = this;
 
-        let firstDataName = firstCard.children[0].dataset.dataName;
-        let secondDataName = secondCard.children[0].dataset.dataName;
+        return;
+    }
 
-        // Log the dataName to the console
-        console.log(firstDataName);
-        console.log(secondDataName);
+    //second click
+    secondCard = this;
 
-        if (firstDataName === secondDataName) {
-            firstCard.removeEventListener("click", flipCard)
-            secondCard.removeEventListener("click", flipCard)
-        } else {
-            setTimeout(() => {
+    checkForMatch()
+}
+
+function checkForMatch() {
+
+    let firstDataName = firstCard.children[0].dataset.dataName;
+    let secondDataName = secondCard.children[0].dataset.dataName;
+
+    let isMatch = firstDataName === secondDataName
+
+    isMatch ? disableCards() : unflipCards();
+}
+
+    function disableCards() {
+        firstCard.removeEventListener("click", flipCard)
+        secondCard.removeEventListener("click", flipCard)
+
+        resetBoard()
+    }
+    function unflipCards() {
+        lockBoard = true;
+        setTimeout(() => {
             firstCard.classList.remove('flip');
             secondCard.classList.remove('flip');
-        }, 1000);
-    }
-    }
-}
 
-for (let card of cards) {
-    card.addEventListener("click", flipCard);
-}
+            resetBoard()
+        }, 1500);
+    }
+    function resetBoard() {
+        [hasFlippedCard, lockBoard] = [false, false];
+        [firstCard, secondCard] = [null, null];
+    }
+
+    for (let card of cards) {
+        card.addEventListener("click", flipCard);
+    }
