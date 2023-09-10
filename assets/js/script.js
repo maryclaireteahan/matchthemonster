@@ -122,7 +122,8 @@ let firstCard, secondCard;
 
 
 function flipCard() {
-    this.classList.toggle("flipCard");
+    this.classList.toggle("flip");
+
     if (!hasFlippedCard) {
         //first click
         hasFlippedCard = true;
@@ -139,11 +140,15 @@ function flipCard() {
         console.log(firstDataName);
         console.log(secondDataName);
 
-        if (firstDataName === secondDataName){
-firstCard.removeEventListener("click", flipCard)
-secondCard.removeEventListener("click", flipCard)
-        }
-        console.log('function excuted')
+        if (firstDataName === secondDataName) {
+            firstCard.removeEventListener("click", flipCard)
+            secondCard.removeEventListener("click", flipCard)
+        } else {
+            setTimeout(() => {
+            firstCard.classList.remove('flip');
+            secondCard.classList.remove('flip');
+        }, 1000);
+    }
     }
 }
 
