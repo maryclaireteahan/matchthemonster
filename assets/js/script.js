@@ -22,7 +22,7 @@ function instructionsBtnClick(event) {
     let listItems = ["Click 2 cards to turn them over and reveal their monsters.",
         "If the monsters match, they stay turned over.", "If they do not match the cards are turned back.",
         "Keep going until all the monsters are turned over.",
-        "Try remember where you have seen which monsters, so you can use them to make a match."
+        "Try to remember where you have seen which monsters, so you can use them to make a match."
     ]
     for (let i = 0; i < listItems.length; i++) {
         let listItem = document.createElement("li");
@@ -116,17 +116,17 @@ for (let monster of monsters) {
 }
 
 //Timer
-
+let timerId;
 let timer;
 let timerSpan = document.getElementById('timer');
 let timerStarted = false;
 
 function startTimer() {
     if (timerStarted) return;
-    let sec = 0;
-    timer = setInterval(() => {
-        timerSpan.innerHTML = " " + sec + "s";
-        sec++;
+     timer = 0;
+    timerId = setInterval(() => {
+        timerSpan.innerHTML = " " + timer + "s";
+        timer++;
     }, 1000)
     timerStarted = true;
 }
@@ -168,9 +168,10 @@ function checkForMatch() {
     isMatch ? disableCards() : unflipCards();
 
     if (document.querySelectorAll('.flip').length === cards.length) {
-        clearTimeout(timer); // stop the timer
-        alert('You win!'); // display a message
-}}
+        clearInterval(timerId); // stop the timer
+        alert(`You Win!\n It only took ${timer} seconds `);; // display a message
+        console.log(`You Win!\n It only took ${timer} seconds `);
+    }}
 
 function disableCards() {
     firstCard.removeEventListener("click", flipCard)
