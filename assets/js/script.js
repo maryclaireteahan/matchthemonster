@@ -166,7 +166,11 @@ function checkForMatch() {
     let isMatch = firstDataName === secondDataName
 
     isMatch ? disableCards() : unflipCards();
-}
+
+    if (document.querySelectorAll('.flip').length === cards.length) {
+        clearTimeout(timer); // stop the timer
+        alert('You win!'); // display a message
+}}
 
 function disableCards() {
     firstCard.removeEventListener("click", flipCard)
