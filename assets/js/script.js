@@ -106,7 +106,7 @@ for (let monster of monsters) {
     // Create an image element with the url and alt attributes for the back of the card
 
     let backImg = document.createElement("img");
-    backImg.src = './assets/images/pumpkin-face.png';
+    backImg.src = '/assets/images/pumpkin-face.png';
     backImg.alt = "scary face";
     backImg.classList.add("card-back");
 
@@ -115,10 +115,14 @@ for (let monster of monsters) {
 
 let cards = document.getElementsByClassName("card");
 
-for (let card of cards) {
-    card.addEventListener("click", flipCard);
-}
+let hasFlippedCard = false;
+let firstCard, secondCard;
+
+
 
 function flipCard() {
     this.classList.toggle("flipCard");
+}
+for (let card of cards) {
+    card.addEventListener("click", flipCard);
 }
