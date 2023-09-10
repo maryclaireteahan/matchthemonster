@@ -21,7 +21,8 @@ function instructionsBtnClick(event) {
 
     let listItems = ["Click 2 cards to turn them over and reveal their monsters.",
         "If the monsters match, they stay turned over.", "If they do not match the cards are turned back.",
-        "You must try remember where you have seen which monsters, so you can use them to make a match."
+        "Keep going until all the monsters are turned over.",
+        "Try remember where you have seen which monsters, so you can use them to make a match."
     ]
     for (let i = 0; i < listItems.length; i++) {
         let listItem = document.createElement("li");
@@ -114,13 +115,28 @@ for (let monster of monsters) {
     card.appendChild(backImg);
 }
 
+//Timer
+
+let timer;
+let timerSpan = document.getElementById('timer');
+let timerStarted = false;
+
+function startTimer() {
+    if (timerStarted) return;
+    let sec = 0;
+    timer = setInterval(() => {
+        timerSpan.innerHTML = " " + sec + "s";
+        sec++;
+    }, 1000)
+    timerStarted = true;
+}
+
+// Flip Cards
 let cards = document.getElementsByClassName("card");
 
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
-
-
 
 function flipCard() {
     if (lockBoard) return;
@@ -132,7 +148,7 @@ function flipCard() {
         //first click
         hasFlippedCard = true;
         firstCard = this;
-
+        startTimer();
         return;
     }
 
@@ -152,26 +168,28 @@ function checkForMatch() {
     isMatch ? disableCards() : unflipCards();
 }
 
-    function disableCards() {
-        firstCard.removeEventListener("click", flipCard)
-        secondCard.removeEventListener("click", flipCard)
+function disableCards() {
+    firstCard.removeEventListener("click", flipCard)
+    secondCard.removeEventListener("click", flipCard)
+
+    resetBoard()
+}
+function unflipCards() {
+    lockBoard = true;
+    setTimeout(() => {
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
 
         resetBoard()
-    }
-    function unflipCards() {
-        lockBoard = true;
-        setTimeout(() => {
-            firstCard.classList.remove('flip');
-            secondCard.classList.remove('flip');
+    }, 1500);
+}
+function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false];
+    [firstCard, secondCard] = [null, null];
+}
 
-            resetBoard()
-        }, 1500);
-    }
-    function resetBoard() {
-        [hasFlippedCard, lockBoard] = [false, false];
-        [firstCard, secondCard] = [null, null];
-    }
+for (let card of cards) {
+    card.addEventListener("click", flipCard);
+}
 
-    for (let card of cards) {
-        card.addEventListener("click", flipCard);
-    }
+
