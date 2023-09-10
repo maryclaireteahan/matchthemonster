@@ -185,7 +185,7 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetBoard()
-    }, 1500);
+    }, 1000);
 }
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
