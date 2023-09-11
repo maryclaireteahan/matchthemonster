@@ -209,6 +209,20 @@
       color: #398516;
   }
 
+  .you-win-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+    box-shadow: 0 5px rgb(9, 23, 9);
+    z-index: 2;
+    background-color: #7c0200;
+  }
+  .you-win-div h3 {
+    
+  }
   /* Media query: large or landscape phones (576px and up) -----------------------------------------------576px----------------------------------------------------------------------- */
   @media screen and (min-width: 576px) {
 

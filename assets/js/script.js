@@ -123,13 +123,16 @@ let timerStarted = false;
 
 function startTimer() {
     if (timerStarted) return;
-     timer = 0;
+    timer = 0;
     timerId = setInterval(() => {
         timerSpan.innerHTML = " " + timer + "s";
         timer++;
     }, 1000)
     timerStarted = true;
 }
+
+//moves
+var moves = 0;
 
 // Flip Cards
 let cards = document.getElementsByClassName("card");
@@ -139,6 +142,11 @@ let lockBoard = false;
 let firstCard, secondCard;
 
 function flipCard() {
+
+    moves++;
+
+    document.querySelector("#moves").textContent = " " + moves;
+
     if (lockBoard) return;
     if (this === firstCard) return;
 
@@ -155,23 +163,32 @@ function flipCard() {
     //second click
     secondCard = this;
 
-    checkForMatch()
+    checkForMatch();
 }
 
 function checkForMatch() {
 
     let firstDataName = firstCard.children[0].dataset.dataName;
     let secondDataName = secondCard.children[0].dataset.dataName;
-
+    
     let isMatch = firstDataName === secondDataName
-
+    
     isMatch ? disableCards() : unflipCards();
-
+    
     if (document.querySelectorAll('.flip').length === cards.length) {
         clearInterval(timerId); // stop the timer
-        alert(`You Win!\n It only took ${timer} seconds `);; // display a message
-        console.log(`You Win!\n It only took ${timer} seconds `);
-    }}
+    
+        popUp = document.getElementById("pop-up")
+        youWinDiv = document.createElement("div")
+        popUp.appendChild(youWin);
+        youWin.classList.add("you-win-div")
+        let youWin = document.createElement("h3");
+        youWin.innerHTML = "You Win!";
+        youWinDiv.appendChild(youWin);
+        youWin.innerHTML=(`It only took ${timer} seconds \n and ${moves} moves `);
+    }
+    
+    }
 
 function disableCards() {
     firstCard.removeEventListener("click", flipCard)
