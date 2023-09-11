@@ -178,14 +178,24 @@ function checkForMatch() {
     if (document.querySelectorAll('.flip').length === cards.length) {
         clearInterval(timerId); // stop the timer
     
-        popUp = document.getElementById("pop-up")
-        youWinDiv = document.createElement("div")
-        popUp.appendChild(youWin);
-        youWin.classList.add("you-win-div")
+        popUp = document.getElementById("pop-up");
+        youWinDiv = document.createElement("div");
+        popUp.appendChild(youWinDiv);
+        youWinDiv.classList.add("you-win-div")
+
         let youWin = document.createElement("h3");
         youWin.innerHTML = "You Win!";
         youWinDiv.appendChild(youWin);
-        youWin.innerHTML=(`It only took ${timer} seconds \n and ${moves} moves `);
+
+        let result = document.createElement("p")
+        result.innerHTML=(`It only took ${timer} seconds <br> and ${moves} moves! `);
+        youWinDiv.appendChild(result);
+
+        let closeBtn = document.createElement("button");
+        closeBtn.classList.add("close-btn");
+        youWinDiv.appendChild(closeBtn);
+        closeBtn.innerHTML = "Close";
+
     }
     
     }
