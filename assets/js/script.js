@@ -23,12 +23,13 @@ function rulesBtnClick(event) {
         "If the monsters match, they stay turned over.", "If they do not match the cards are turned back.",
         "Keep going until all the monsters are turned over.",
         "Try to remember where you have seen which monsters, so you can use them to make a match."
-    ]
+    ];
+
     for (let i = 0; i < listItems.length; i++) {
         let listItem = document.createElement("li");
         listItem.innerHTML = listItems[i];
         rulesList.appendChild(listItem);
-    };
+    }
 
     rules.appendChild(rulesList);
 
@@ -77,7 +78,7 @@ let monsters = [
     { src: "./assets/images/werewolf.png", alt: "Werewolf", dataName: "Werewolf" },
     { src: "./assets/images/witch.png", alt: "Witch", dataName: "Witch" },
     { src: "./assets/images/zombie.png", alt: "Zombie", dataName: "Zombie" },
-]
+];
 
 const shuffleMonsters = monsters => {
     for (let i = monsters.length - 1; i > 0; i--) {
@@ -85,7 +86,7 @@ const shuffleMonsters = monsters => {
         let k = monsters[i];
         monsters[i] = monsters[j];
         monsters[j] = k;
-    }
+    };
 }
 shuffleMonsters(monsters);
 
@@ -127,7 +128,7 @@ function startTimer() {
     timerId = setInterval(() => {
         timerSpan.innerHTML = " " + timer + "s";
         timer++;
-    }, 1000)
+    }, 1000);
     timerStarted = true;
 }
 
@@ -171,23 +172,23 @@ function checkForMatch() {
     let firstDataName = firstCard.children[0].dataset.dataName;
     let secondDataName = secondCard.children[0].dataset.dataName;
 
-    let isMatch = firstDataName === secondDataName
+    let isMatch = firstDataName === secondDataName;
 
     isMatch ? disableCards() : unflipCards();
 
     if (document.querySelectorAll('.flip').length === cards.length) {
         clearInterval(timerId); // stop the timer
 
-        popUp = document.getElementById("pop-up");
+        let popUp = document.getElementById("pop-up");
         youWinDiv = document.createElement("div");
         popUp.appendChild(youWinDiv);
-        youWinDiv.classList.add("you-win-div")
+        youWinDiv.classList.add("you-win-div");
 
         let youWin = document.createElement("h3");
         youWin.innerHTML = "You Win!";
         youWinDiv.appendChild(youWin);
 
-        let result = document.createElement("p")
+        let result = document.createElement("p");
         result.innerHTML = (`It only took ${timer} seconds <br> and ${moves} moves! `);
         youWinDiv.appendChild(result);
 
@@ -205,10 +206,10 @@ function checkForMatch() {
 }
 
 function disableCards() {
-    firstCard.removeEventListener("click", flipCard)
-    secondCard.removeEventListener("click", flipCard)
+    firstCard.removeEventListener("click", flipCard);
+    secondCard.removeEventListener("click", flipCard);
 
-    resetBoard()
+    resetBoard();
 }
 function unflipCards() {
     lockBoard = true;
@@ -216,7 +217,7 @@ function unflipCards() {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
 
-        resetBoard()
+        resetBoard();
     }, 1000);
 }
 function resetBoard() {
