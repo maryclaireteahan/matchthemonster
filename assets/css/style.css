@@ -8,7 +8,7 @@
   }
 
   body {
-      background: rgb(14, 36, 14) url("../images/face.png") no-repeat;
+      background: rgb(9, 33, 3);
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -208,7 +208,8 @@
   p {
       color: #398516;
   }
-/* You Win popup*/
+
+  /* You Win popup*/
   #pop-up {
       display: flex;
       justify-content: center;
@@ -218,34 +219,36 @@
   }
 
   .you-win-div {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-style: solid;
-    border-color: black;
-    border-radius: 15px;
-    box-shadow: 0 5px rgb(9, 23, 9);
-    z-index: 2;
-    background-color: #7c0200;
-    width: 200px;
-    align-content: center;
-    align-items: center;
-}
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      border-style: solid;
+      border-color: black;
+      border-radius: 15px;
+      box-shadow: 0 5px rgb(9, 23, 9);
+      z-index: 2;
+      background-color: #7c0200;
+      width: 200px;
+      align-content: center;
+      align-items: center;
+  }
 
   .you-win-div h3 {
-    font-size: 30px;
-    position: relative;
-    bottom: 10%;
+      font-size: 30px;
+      position: relative;
+      bottom: 10%;
   }
 
-  .you-win-div p{
-    color: black;
-    text-align: center;
-  };
-  .you-win-div button {
-    position: relative;
-    top: 15%;
+  .you-win-div p {
+      color: black;
+      text-align: center;
   }
+
+  .you-win-div button {
+      position: relative;
+      top: 15%;
+  }
+
   /* Media query: large or landscape phones (576px and up) -----------------------------------------------576px----------------------------------------------------------------------- */
   @media screen and (min-width: 576px) {
 
@@ -279,13 +282,19 @@
   @media screen and (min-width: 768px) {
 
       .grid-container {
-          width: 475px;
-          grid-gap: 20px 70px;
+          width: 445px;
+          grid-gap: 25px 55px;
+          height: 380px;
       }
 
       .grid-container div {
+          left: 15%;
+          top: 18%;
+      }
+
+      .card {
+          width: 75px;
           height: 75px;
-          width: 85px;
       }
 
       .results {
@@ -295,9 +304,20 @@
       }
 
       p {
-          font-size: 27px;
+          font-size: 30px;
       }
 
+      .you-win-div h3 {
+          bottom: 0;
+      }
+
+      .you-win-div button {
+          top: 15px;
+      }
+
+      .you-win-div p {
+          font-size: 25px;
+      }
   }
 
   /* Large devices (laptops and desktops, 992px and up) -----------------------------------------------992px---------------------------------------------------------------------------- */
@@ -316,17 +336,23 @@
       }
 
       .grid-container {
-          width: 580px;
-          grid-gap: 20px 95px;
+          height: 440px;
+          width: 575px;
+          grid-gap: 40px 80px;
       }
 
 
       .grid-container div {
-
           height: 95px;
-          width: 115px;
+          width: 95px;
+          left: 58%;
+          top: 28%;
       }
+  }
 
+  .you-win-div {
+      width: 300px;
+  }
   }
 
   /* Large devices (laptops and desktops, 1200px and up) -----------------------------------------------1200--------------------------------------------------------------------------- */
