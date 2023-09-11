@@ -64,6 +64,8 @@
       align-self: center;
       margin-bottom: 25px;
       justify-content: center;
+                  transition: 0.2s all;
+
   }
 
   .close-btn {
@@ -83,8 +85,9 @@
   .close-btn :active {
       background-color: #1e450c;
       box-shadow: 0 2px rgb(4, 9, 4);
-      transform: translateY(20px);
-  }
+      transform: scale(3);
+      /* Scaling button to 0.98 to its original size */
+      /* Lowering the shadow */  }
 
   #rules-btn {
       position: relative;
@@ -173,7 +176,7 @@
   .card-front {
       position: absolute;
       gap: 5px;
-      background-color: #398516;
+      background-color: #390101;
       border-style: solid;
       border-color: black;
       max-width: 100%;

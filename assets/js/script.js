@@ -65,7 +65,7 @@ gridContainerDiv.appendChild(gridContainer);
 let monsters = [
     { src: "./assets/images/demon.png", alt: "Demon", dataName: "Demon" },
     { src: "./assets/images/frankenstein.png", alt: "Frankenstein", dataName: "Frankenstein" },
-    { src: "./assets/images/goblin.png", alt: "Goblin", dataName: "Goblin" },
+    { src: "./assets/images/clown.png", alt: "Clown", dataName: "Clown" },
     { src: "./assets/images/mummy.png", alt: "Mummy", dataName: "Mummy" },
     { src: "./assets/images/vampire.png", alt: "Vampire", dataName: "Vampire" },
     { src: "./assets/images/werewolf.png", alt: "Werewolf", dataName: "Werewolf" },
@@ -73,7 +73,7 @@ let monsters = [
     { src: "./assets/images/zombie.png", alt: "Zombie", dataName: "Zombie" },
     { src: "./assets/images/demon.png", alt: "Demon", dataName: "Demon" },
     { src: "./assets/images/frankenstein.png", alt: "Frankenstein", dataName: "Frankenstein" },
-    { src: "./assets/images/goblin.png", alt: "Goblin", dataName: "Goblin" },
+    { src: "./assets/images/clown.png", alt: "Clown", dataName: "Clown" },
     { src: "./assets/images/mummy.png", alt: "Mummy", dataName: "Mummy" },
     { src: "./assets/images/vampire.png", alt: "Vampire", dataName: "Vampire" },
     { src: "./assets/images/werewolf.png", alt: "Werewolf", dataName: "Werewolf" },
