@@ -174,7 +174,7 @@ function checkForMatch() {
 
     let isMatch = firstDataName === secondDataName;
 
-    isMatch ? disableCards() : unflipCards();
+
 
     const popUp = document.getElementById("pop-up");
     const youWinDiv = document.createElement("div");
@@ -182,7 +182,8 @@ function checkForMatch() {
     const result = document.createElement("p");
     const closeBtn = document.createElement("button");
 
-
+    isMatch ? disableCards() : unflipCards();
+    
     if (document.querySelectorAll('.flip').length === cards.length) {
         clearInterval(timerId); // stop the timer
 
