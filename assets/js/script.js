@@ -170,14 +170,14 @@ function checkForMatch() {
 
     let firstDataName = firstCard.children[0].dataset.dataName;
     let secondDataName = secondCard.children[0].dataset.dataName;
-    
+
     let isMatch = firstDataName === secondDataName
-    
+
     isMatch ? disableCards() : unflipCards();
-    
+
     if (document.querySelectorAll('.flip').length === cards.length) {
         clearInterval(timerId); // stop the timer
-    
+
         popUp = document.getElementById("pop-up");
         youWinDiv = document.createElement("div");
         popUp.appendChild(youWinDiv);
@@ -188,7 +188,7 @@ function checkForMatch() {
         youWinDiv.appendChild(youWin);
 
         let result = document.createElement("p")
-        result.innerHTML=(`It only took ${timer} seconds <br> and ${moves} moves! `);
+        result.innerHTML = (`It only took ${timer} seconds <br> and ${moves} moves! `);
         youWinDiv.appendChild(result);
 
         let closeBtn = document.createElement("button");
@@ -196,9 +196,13 @@ function checkForMatch() {
         youWinDiv.appendChild(closeBtn);
         closeBtn.innerHTML = "Close";
 
+        function closeBtnClick(event) {
+            popUp.removeChild(youWinDiv);
+        }
+        closeBtn.addEventListener("click", closeBtnClick);
     }
-    
-    }
+
+}
 
 function disableCards() {
     firstCard.removeEventListener("click", flipCard)

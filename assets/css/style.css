@@ -242,7 +242,7 @@
     color: black;
     text-align: center;
   };
-  .you-win-div .close-btn {
+  .you-win-div button {
     position: relative;
     top: 15%;
   }
