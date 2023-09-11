@@ -96,7 +96,7 @@
       right: 15px;
   }
 
-  h3 {
+  #instructions-div h3 {
       align-self: center;
       padding-top: 5px;
   }
@@ -208,6 +208,14 @@
   p {
       color: #398516;
   }
+/* You Win popup*/
+  #pop-up {
+      display: flex;
+      justify-content: center;
+      height: 220px;
+      top: 50px;
+      position: relative;
+  }
 
   .you-win-div {
     display: flex;
@@ -219,9 +227,24 @@
     box-shadow: 0 5px rgb(9, 23, 9);
     z-index: 2;
     background-color: #7c0200;
-  }
+    width: 200px;
+    align-content: center;
+    align-items: center;
+}
+
   .you-win-div h3 {
-    
+    font-size: 30px;
+    position: relative;
+    bottom: 10%;
+  }
+
+  .you-win-div p{
+    color: black;
+    text-align: center;
+  };
+  .you-win-div .close-btn {
+    position: relative;
+    top: 15%;
   }
   /* Media query: large or landscape phones (576px and up) -----------------------------------------------576px----------------------------------------------------------------------- */
   @media screen and (min-width: 576px) {
