@@ -1,23 +1,23 @@
-// INSTRUCTION BUTTON
-function instructionsBtnClick(event) {
+// rules BUTTON
+function rulesBtnClick(event) {
 
-    //disable instruction button after one click
-    document.getElementById("instructions-btn").disabled = true;
+    //disable rules button after one click
+    document.getElementById("rules-btn").disabled = true;
 
     // Create the a Div
-    let instructions = document.createElement("div");
+    let rules = document.createElement("div");
 
-    // Put the Div inside the HTML element instructions-div
-    let instructionsDiv = document.getElementById("instructions-div");
-    instructionsDiv.appendChild(instructions);
+    // Put the Div inside the HTML element rules-div
+    let rulesDiv = document.getElementById("rules-div");
+    rulesDiv.appendChild(rules);
 
     // Put a h3 element inside the new Div
-    let instructionsHeading = document.createElement("h3");
-    instructionsHeading.innerHTML = "Instructions:";
-    instructions.appendChild(instructionsHeading);
+    let rulesHeading = document.createElement("h3");
+    rulesHeading.innerHTML = "Rules:";
+    rules.appendChild(rulesHeading);
 
     // Create and put an ordered list under the h3 element
-    let instructionsList = document.createElement("ol");
+    let rulesList = document.createElement("ol");
 
     let listItems = ["Click 2 cards to turn them over and reveal their monsters.",
         "If the monsters match, they stay turned over.", "If they do not match the cards are turned back.",
@@ -27,29 +27,29 @@ function instructionsBtnClick(event) {
     for (let i = 0; i < listItems.length; i++) {
         let listItem = document.createElement("li");
         listItem.innerHTML = listItems[i];
-        instructionsList.appendChild(listItem);
+        rulesList.appendChild(listItem);
     };
 
-    instructions.appendChild(instructionsList);
+    rules.appendChild(rulesList);
 
     //create the button
     let closeBtn = document.createElement("button");
     closeBtn.classList.add("close-btn");
-    instructions.appendChild(closeBtn);
+    rules.appendChild(closeBtn);
     closeBtn.innerHTML = "Close";
 
-    //remove element when close button clicked and reenable instructions button
+    //remove element when close button clicked and reenable rules button
     function closeBtnClick(event) {
-        instructionsDiv.removeChild(instructions);
-        document.getElementById("instructions-btn").disabled = false;
+        rulesDiv.removeChild(rules);
+        document.getElementById("rules-btn").disabled = false;
     }
     closeBtn.addEventListener("click", closeBtnClick);
 }
 
 // select HTML button element and assign an event listener
-let instructionsBtn = document.getElementById("instructions-btn");
+let rulesBtn = document.getElementById("rules-btn");
 
-instructionsBtn.addEventListener("click", instructionsBtnClick);
+rulesBtn.addEventListener("click", rulesBtnClick);
 
 // GRID
 
