@@ -228,4 +228,18 @@ for (let card of cards) {
     card.addEventListener("click", flipCard);
 }
 
+function reset() {
+    for (let card of cards) {
+        card.classList.remove("flip");
+    };
 
+    timer = 0;
+    moves = 0;
+    document.querySelector("#moves").textContent = " " + moves;
+    document.querySelector("#timer").textContent = " " + timer;
+    clearInterval(timerId);
+}
+
+let restartBtn = document.getElementById("restart-btn");
+
+restartBtn.addEventListener("click", reset);
