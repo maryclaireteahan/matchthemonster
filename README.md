@@ -4,9 +4,7 @@
 
 # The purpose with this project
 
-QuickMem is a fast challenging memory game with the purpose to challenge the player to reach a perfect game of 10 pairs. The user interface is deliberately kept clean and free from images and abundant graphics so that the player is allowed to focus on the actual game. The difficult level of the game is set to a level so that most players wont succeed to win the game on their first tries.
-
-Match the Monster! is a fun halloween themed memory game. The purpose of the game is the challenge the player to match all 8 pairs or monsters in as few moves, and as little time as possible.
+Match the Monster! is a fun halloween themed memory game. The purpose of the game is the challenge the player to match all 8 pairs of monsters in as few moves, and as little time as possible. The user interface is clean and simple. There is no distracting imagery or features so the focus is kept on the game. The game itself is straightforward, with fun monster images and the ability to see how many moves you've made and how much time you've spent on the game so far.
 
 The game has one screen, the game, and two popups, the rules and a congratulatory "You Win!" message along with your score.
 
@@ -53,7 +51,7 @@ A live version of the project can be found here - https://maryclaireteahan.githu
 
 This game is ment for:
 
- - All individuals, regarding age, that wants to play a challenging game.
+ - All individuals, regarding age, that wants to play a straightforward, halloween themed game.
 
 ### User Stories
 

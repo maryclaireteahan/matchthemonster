@@ -144,6 +144,11 @@ let lockBoard = false;
 let firstCard, secondCard;
 
 function flipCard() {
+// Check if the card is already flipped
+if (this.isFlipped) return;
+
+// Set the card state to flipped
+this.isFlipped = true;
 
     moves++;
 
@@ -212,6 +217,9 @@ function disableCards() {
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
 
+    firstCard.isFlipped = false;
+    secondCard.isFlipped = false;
+
     resetBoard();
 }
 function unflipCards() {
@@ -219,6 +227,9 @@ function unflipCards() {
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
+
+        firstCard.isFlipped = false;
+        secondCard.isFlipped = false;
 
         resetBoard();
     }, 1000);
