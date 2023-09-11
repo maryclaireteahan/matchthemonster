@@ -1,7 +1,8 @@
-// rules BUTTON
+//Rules Button
+
 function rulesBtnClick(event) {
 
-    //disable rules button after one click
+    //Disable rules button after one click
     document.getElementById("rules-btn").disabled = true;
 
     // Create the a Div
@@ -33,13 +34,13 @@ function rulesBtnClick(event) {
 
     rules.appendChild(rulesList);
 
-    //create the button
+    //Create the button
     let closeBtn = document.createElement("button");
     closeBtn.classList.add("close-btn");
     rules.appendChild(closeBtn);
     closeBtn.innerHTML = "Close";
 
-    //remove element when close button clicked and reenable rules button
+    //Remove element when close button clicked and reenable rules button
     function closeBtnClick(event) {
         rulesDiv.removeChild(rules);
         document.getElementById("rules-btn").disabled = false;
@@ -47,12 +48,12 @@ function rulesBtnClick(event) {
     closeBtn.addEventListener("click", closeBtnClick);
 }
 
-// select HTML button element and assign an event listener
+// Select HTML button element and assign an event listener
 let rulesBtn = document.getElementById("rules-btn");
 
 rulesBtn.addEventListener("click", rulesBtnClick);
 
-// GRID
+// Grid
 
 let gridContainerDiv = document.getElementById("grid-container-div");
 
@@ -60,7 +61,7 @@ let gridContainer = document.createElement("div");
 gridContainer.classList.add("grid-container");
 gridContainerDiv.appendChild(gridContainer);
 
-//add monsters to the grid
+//Add monsters to the grid
 let monsters = [
     { src: "./assets/images/demon.png", alt: "Demon", dataName: "Demon" },
     { src: "./assets/images/frankenstein.png", alt: "Frankenstein", dataName: "Frankenstein" },
@@ -91,7 +92,7 @@ const shuffleMonsters = monsters => {
 shuffleMonsters(monsters);
 
 for (let monster of monsters) {
-    // Create an image element with the url and alt attributes for the front of the car
+    // Create an image element with the url and alt attributes for the front of the card
     let card = document.createElement("div");
     card.classList.add("card");
 
@@ -103,7 +104,7 @@ for (let monster of monsters) {
 
     card.appendChild(monsterImg);
 
-    // Append the image element to the gridContainer div
+    // Add the image element to the gridContainer div
     gridContainer.appendChild(card);
 
     // Create an image element with the url and alt attributes for the back of the card
@@ -132,7 +133,7 @@ function startTimer() {
     timerStarted = true;
 }
 
-//moves
+//Moves
 var moves = 0;
 
 // Flip Cards
@@ -154,19 +155,20 @@ function flipCard() {
     this.classList.toggle("flip");
 
     if (!hasFlippedCard) {
-        //first click
+        //First click
         hasFlippedCard = true;
         firstCard = this;
         startTimer();
         return;
     }
 
-    //second click
+    //Second click
     secondCard = this;
 
     checkForMatch();
 }
 
+//Function to see if the two selected cards match
 function checkForMatch() {
 
     let firstDataName = firstCard.children[0].dataset.dataName;
@@ -182,6 +184,7 @@ function checkForMatch() {
 
     if (isMatch) { disableCards(); } else { unflipCards(); }
 
+    //You Win popup when game is over
     if (document.querySelectorAll('.flip').length === cards.length) {
         clearInterval(timerId); // stop the timer
 
@@ -229,6 +232,7 @@ for (let card of cards) {
     card.addEventListener("click", flipCard);
 }
 
+//Restart Button
 function reset() {
     location.reload();
 }
