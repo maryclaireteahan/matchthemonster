@@ -39,7 +39,7 @@
       padding: 5px 10px;
   }
 
-  /** Instructions, close instructions and Restart button **/
+  /** rules, close rules and Restart button **/
   .buttons-div {
       display: inline-flex;
       justify-content: space-between;
@@ -86,22 +86,24 @@
       transform: translateY(20px);
   }
 
-  #instructions-btn {
-      position: relative;
-      left: 7px;
+  #rules-btn {
+    position: relative;
+    left: 15px;
+    width: 50px;
   }
 
   #restart-btn {
-      position: relative;
-      right: 15px;
+    position: relative;
+    right: 15px;
+    width: 50px;
   }
 
-  #instructions-div h3 {
+  #rules-div h3 {
       align-self: center;
       padding-top: 5px;
   }
 
-  #instructions-div {
+  #rules-div {
       display: flex;
       height: fit-content;
       width: fit-content;
@@ -112,7 +114,7 @@
       z-index: 1;
   }
 
-  #instructions-div div {
+  #rules-div div {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -348,8 +350,7 @@
           left: 58%;
           top: 28%;
       }
-  }
-
+  
   .you-win-div {
       width: 300px;
   }
