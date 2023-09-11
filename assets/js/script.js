@@ -86,8 +86,8 @@ const shuffleMonsters = monsters => {
         let k = monsters[i];
         monsters[i] = monsters[j];
         monsters[j] = k;
-    };
-}
+    }
+};
 shuffleMonsters(monsters);
 
 for (let monster of monsters) {
@@ -176,34 +176,37 @@ function checkForMatch() {
 
     isMatch ? disableCards() : unflipCards();
 
+    const popUp = document.getElementById("pop-up");
+    const youWinDiv = document.createElement("div");
+    const youWin = document.createElement("h3");
+    const result = document.createElement("p");
+    const closeBtn = document.createElement("button");
+
+
     if (document.querySelectorAll('.flip').length === cards.length) {
         clearInterval(timerId); // stop the timer
 
-        let popUp = document.getElementById("pop-up");
-        let youWinDiv = document.createElement("div");
+
         popUp.appendChild(youWinDiv);
         youWinDiv.classList.add("you-win-div");
 
-        let youWin = document.createElement("h3");
         youWin.innerHTML = "You Win!";
         youWinDiv.appendChild(youWin);
 
-        let result = document.createElement("p");
         result.innerHTML = (`It only took ${timer} seconds <br> and ${moves} moves! `);
         youWinDiv.appendChild(result);
 
-        let closeBtn = document.createElement("button");
         closeBtn.classList.add("close-btn");
         youWinDiv.appendChild(closeBtn);
         closeBtn.innerHTML = "Close";
 
-        function closeBtnClick(event) {
-            popUp.removeChild(youWinDiv);
-        }
-        closeBtn.addEventListener("click", closeBtnClick);
     }
-
+    function closeBtnClick(event) {
+        popUp.removeChild(youWinDiv);
+    }
+    closeBtn.addEventListener("click", closeBtnClick);
 }
+
 
 function disableCards() {
     firstCard.removeEventListener("click", flipCard);
@@ -234,5 +237,5 @@ function reset() {
 }
 
 let restartBtn = document.getElementById("restart-btn");
-restartBtn.addEventListener("click", reset,);
+restartBtn.addEventListener("click", reset);
 
