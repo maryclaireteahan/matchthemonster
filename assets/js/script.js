@@ -180,7 +180,7 @@ function checkForMatch() {
         clearInterval(timerId); // stop the timer
 
         let popUp = document.getElementById("pop-up");
-        youWinDiv = document.createElement("div");
+        let youWinDiv = document.createElement("div");
         popUp.appendChild(youWinDiv);
         youWinDiv.classList.add("you-win-div");
 
