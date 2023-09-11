@@ -100,7 +100,8 @@
 
   #rules-div h3 {
       align-self: center;
-      padding-top: 5px;
+      padding-top: 15px;
+      font-size: 25px;
   }
 
   #rules-div {
@@ -131,6 +132,7 @@
       flex-direction: column;
       padding: 20px 30px 20px;
       z-index: 2;
+      line-height: 40px;
       font-size: 20px;
       letter-spacing: 1px;
   }
@@ -379,6 +381,14 @@
           left: 75px;
           width: 100px;
       }
+      #rules-div h3 {
+        font-size: 40px;
+    }
+    
+      .close-btn {
+          font-size: 25px;
+          width: 100px;
+      }
 
       .you-win-div {
           width: 300px;
@@ -388,8 +398,14 @@
   /* Large devices (laptops and desktops, 1200px and up) -----------------------------------------------1200--------------------------------------------------------------------------- */
   @media screen and (min-width: 1200px) {
 
-    .grid-container {
-        width: 575px;
-        grid-gap: 40px 80px;
-    }
+      .grid-container {
+          width: 575px;
+          grid-gap: 40px 80px;
+      }
+
+      ol {
+          line-height: 41px;
+          font-size: 25px;
+          letter-spacing: 2px;
+      }
   }

@@ -230,9 +230,8 @@ for (let card of cards) {
 
 function reset() {
     location.reload();
-
 }
 
 let restartBtn = document.getElementById("restart-btn");
-restartBtn.addEventListener("click", reset, shuffleMonsters, flipCard, disableCards, unflipCards, resetBoard);
+restartBtn.addEventListener("click", reset,);
 
