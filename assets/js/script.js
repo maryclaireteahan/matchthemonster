@@ -174,19 +174,16 @@ function checkForMatch() {
 
     let isMatch = firstDataName === secondDataName;
 
-
-
     const popUp = document.getElementById("pop-up");
     const youWinDiv = document.createElement("div");
     const youWin = document.createElement("h3");
     const result = document.createElement("p");
     const closeBtn = document.createElement("button");
 
-    isMatch ? disableCards() : unflipCards();
-    
+    if (isMatch) { disableCards(); } else { unflipCards(); }
+
     if (document.querySelectorAll('.flip').length === cards.length) {
         clearInterval(timerId); // stop the timer
-
 
         popUp.appendChild(youWinDiv);
         youWinDiv.classList.add("you-win-div");
@@ -200,14 +197,13 @@ function checkForMatch() {
         closeBtn.classList.add("close-btn");
         youWinDiv.appendChild(closeBtn);
         closeBtn.innerHTML = "Close";
-
     }
+
     function closeBtnClick(event) {
         popUp.removeChild(youWinDiv);
     }
     closeBtn.addEventListener("click", closeBtnClick);
 }
-
 
 function disableCards() {
     firstCard.removeEventListener("click", flipCard);
