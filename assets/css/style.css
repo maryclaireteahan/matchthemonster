@@ -87,15 +87,15 @@
   }
 
   #rules-btn {
-    position: relative;
-    left: 15px;
-    width: 50px;
+      position: relative;
+      left: 15px;
+      width: 50px;
   }
 
   #restart-btn {
-    position: relative;
-    right: 15px;
-    width: 50px;
+      position: relative;
+      right: 15px;
+      width: 50px;
   }
 
   #rules-div h3 {
@@ -270,6 +270,16 @@
           font-size: 15px;
       }
 
+      #rules-btn {
+          left: 30px;
+          width: 60px;
+      }
+
+      #restart-btn {
+          right: 30px;
+          width: 60px;
+      }
+
       .results {
           position: relative;
       }
@@ -303,6 +313,16 @@
           top: 8px;
           left: 11px;
           flex-direction: column;
+      }
+
+      #restart-btn {
+          right: 50px;
+          width: 80px;
+      }
+
+      #rules-btn {
+          left: 50px;
+          width: 80px;
       }
 
       p {
@@ -343,24 +363,33 @@
           grid-gap: 40px 80px;
       }
 
-
       .grid-container div {
           height: 95px;
           width: 95px;
           left: 58%;
           top: 28%;
       }
-  
-  .you-win-div {
-      width: 300px;
-  }
+
+      #restart-btn {
+          right: 75px;
+          width: 100px;
+      }
+
+      #rules-btn {
+          left: 75px;
+          width: 100px;
+      }
+
+      .you-win-div {
+          width: 300px;
+      }
   }
 
   /* Large devices (laptops and desktops, 1200px and up) -----------------------------------------------1200--------------------------------------------------------------------------- */
   @media screen and (min-width: 1200px) {
 
-      .grid-container {
-          width: 610px;
-          grid-gap: 15px 105px;
-      }
+    .grid-container {
+        width: 575px;
+        grid-gap: 40px 80px;
+    }
   }
