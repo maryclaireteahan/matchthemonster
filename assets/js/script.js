@@ -110,8 +110,8 @@ for (let monster of monsters) {
     // Create an image element with the url and alt attributes for the back of the card
 
     let backImg = document.createElement("img");
-    backImg.src = "./assets/images/face.png";
-    backImg.alt = "scary face";
+    backImg.src = "./assets/images/pumpkin.png";
+    backImg.alt = "pmupkin";
     backImg.classList.add("card-back");
 
     card.appendChild(backImg);
