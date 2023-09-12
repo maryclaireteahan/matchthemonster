@@ -60,19 +60,17 @@ The user stories between new and old players differ just slightly since it is a 
 #### New players
 
  - I want to try the game.
- - I want to increase the number of pairs compared to my last game.
  - I want to win the game
- - I want to bet the game with a lower number of tries than my last game.
+ - I want to match the 8 pairs in fewer moves and in less time than my last try.
 
 #### Old players
 
- - I want to increase the number of pairs compared to my last session.
- - I want to bet the game with a lower number of tries than my last session.
+ - I want to match the 8 pairs in fewer moves and in less time than my last try.
  - I want to win the game.
 
 ### Player goals
 
- - To find all 10 pairs before the time runs out.
+ - To find all 8 pairs in as few moves and as little time as possible.
 
 ### Project Requirements
 
@@ -88,31 +86,42 @@ Balsamiq was used as a tool during the discovery phase in order to understand ho
 
 The game consists of three screens, Start, Game and End. The final version of the wireframe and design are presented below this text.
 
-Start Screen
-
-![Start Screen](/assets/images/readme-images/wireframe-start.jpg)
-
 Game Screen
 
-![Game Screen](/assets/images/readme-images/wireframe-game.jpg)
+![Game Screen](/readme/documentation/supp-images/site/mainscreen.png)
 
-End Screen
+End Popup
 
-![End Screen](/assets/images/readme-images/wireframe-end.jpg)
+![End Popup](/readme/documentation/supp-images/site/youwin.png)
+
+Rules Popup
+
+![Rules Popup](/readme/documentation/supp-images/site/rules.png)
 
 #### Colours
 
 The colour palette was created using [Coolors](https://coolors.co/).
 
-![Colour Palette](/assets/images/readme-images/colour-palette.png)
+![Colour Palette](/readme/documentation/supp-images/colorpalette.png)
 
 #### Typography
 
-Font chosen for the project is [Balsamiq Sans](https://fonts.google.com/specimen/Balsamiq+Sans?query=balsam)
+Font chosen for the project is [Neucha](https://fonts.googleapis.com/css2?family=Neucha&display=swap)
 
 #### Images
+The game cards are using icons created by wanicon from [flaticon](https://www.flaticon.com/) as face value.
+[Demon] - (https://www.flaticon.com/free-icons/devil)
+[Vampire] -(https://www.flaticon.com/free-icons/vampire)
+[Zombie] - (https://www.flaticon.com/free-icons/spooky)
+[Ghost] - (https://www.flaticon.com/free-icons/ghost)
+[Death] - (https://www.flaticon.com/free-icons/death)
+[Frankenstein] - (https://www.flaticon.com/free-icons/frankenstein)
+[Clown] - (https://www.flaticon.com/free-icons/spooky)
+[Mummy] - (https://www.flaticon.com/free-icons/mummy)
+[Pumpkin] - (https://www.flaticon.com/free-icons/pumpkin)"
 
-The game does not contain any image elements. The game cards are using fonts from [Font Awesome](https://fontawesome.com/) as face value.
+
+The game cards are using  from [Font Awesome](https://fontawesome.com/) as face value.
 
 [Back to top](#quickmem)
 
