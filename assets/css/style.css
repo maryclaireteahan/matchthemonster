@@ -64,8 +64,6 @@
       align-self: center;
       margin-bottom: 25px;
       justify-content: center;
-                  transition: 0.2s all;
-
   }
 
   .close-btn {
@@ -75,19 +73,6 @@
   .btn {
       width: fit-content;
   }
-
-  .btn :hover,
-  .close-btn :hover {
-      background-color: #1e450c
-  }
-
-  .btn :active,
-  .close-btn :active {
-      background-color: #1e450c;
-      box-shadow: 0 2px rgb(4, 9, 4);
-      transform: scale(3);
-      /* Scaling button to 0.98 to its original size */
-      /* Lowering the shadow */  }
 
   #rules-btn {
       position: relative;
