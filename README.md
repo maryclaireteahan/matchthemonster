@@ -6,7 +6,7 @@
 
 Match the Monster! is a fun halloween themed memory game. The purpose of the game is the challenge the player to match all 8 pairs of monsters in as few moves, and as little time as possible. The user interface is clean and simple. There is no distracting imagery or features so the focus is kept on the game. The game itself is straightforward, with fun monster images and the ability to see how many moves you've made and how much time you've spent on the game so far.
 
-The game has one screen, the game, and two popups, the rules and a congratulatory "You Win!" message along with your score.
+The game has one screen, the game, and two pop-ups, the rules and a congratulatory "You Win!" message along with your score.
 
 Target audience: All individuals that want a fun straight forward game to play.
 
@@ -32,9 +32,9 @@ A live version of the project can be found here - https://maryclaireteahan.githu
     + [Images](#images "Images")
 + [Features](#features "Features")
   + [Existing Features](#existing-features "Existing Features")
-    + [Start Screen](#start-screen "Start Screen")
     + [Game Screen](#game-screen "Game Screen")
-    + [End Screen](#end-screen "End Screen")
+    + [You Win Pop-up](#game-screen "You Win Pop-up")
+    + [Rules Pop-up](#end-screen "Rules Pop-up")
   + [Features Left to Implement](#features-left-to-implement "Features Left to Implement")
 + [Technologies used](#technologies-used "Technologies used")
 + [Testing](#testing "Testing")
@@ -88,15 +88,15 @@ The game consists of three screens, Start, Game and End. The final version of th
 
 Game Screen
 
-![Game Screen](/readme/documentation/supp-images/site/mainscreen.png)
+![Game Screen](/readme/documentation/wireframes/game.png)
 
-End Popup
+End Pop-up
 
-![End Popup](/readme/documentation/supp-images/site/youwin.png)
+![End Pop-up](/readme/documentation/wireframes/youwin.png)
 
-Rules Popup
+Rules Pop-up
 
-![Rules Popup](/readme/documentation/supp-images/site/rules.png)
+![Rules Pop-up](/readme/documentation/wireframes/rules.png)
 
 #### Colours
 
@@ -109,7 +109,7 @@ The colour palette was created using [Coolors](https://coolors.co/).
 Font chosen for the project is [Neucha](https://fonts.googleapis.com/css2?family=Neucha&display=swap)
 
 #### Images
-The game cards are using icons created by wanicon from [flaticon](https://www.flaticon.com/) as face value.
+The game cards are using icons created by wanicon from [flaticon](https://www.flaticon.com/).
 [Demon] - (https://www.flaticon.com/free-icons/devil)
 [Vampire] -(https://www.flaticon.com/free-icons/vampire)
 [Zombie] - (https://www.flaticon.com/free-icons/spooky)
@@ -118,46 +118,45 @@ The game cards are using icons created by wanicon from [flaticon](https://www.fl
 [Frankenstein] - (https://www.flaticon.com/free-icons/frankenstein)
 [Clown] - (https://www.flaticon.com/free-icons/spooky)
 [Mummy] - (https://www.flaticon.com/free-icons/mummy)
+
+The the image for the back of the cards and the favicon is also created by wanicon and converted on [Favicon](https://favicon.io/)
 [Pumpkin] - (https://www.flaticon.com/free-icons/pumpkin)"
 
-
-The game cards are using  from [Font Awesome](https://fontawesome.com/) as face value.
-
-[Back to top](#quickmem)
+[Back to top](#matchthemonsters)
 
 ## Features 
 
-QuickMem consists of three game screens:
+Match the Monsters! consists of one game screen and two pop-ups:
 
- - Start Screen
  - Game Screen
- - End Screen
+ - You Win Pop-up
+ - Rules Pop-up
 
-QuickMem is a linear game and when the player presses start the game board is created and shuffled. The player ends up at the end screen at either a ”Win” or a ”Loss”.
+When Match the Monsters! the game board is created and shuffled. The player ends up at the end screen at either a ”Win” or a ”Loss”.
 
 ### Existing Features
 
-#### Start Screen
+#### Game Screen
 
-The Start Screen consists of a header and a paragraph that contains the games main title and the rules. Other elements are:
+The Game Screen consists of a header and a paragraph that contains the games main title and the rules. Other elements are:
 
  - Text that tells player to enter name, this is optional
  - Input field for player name (optional)
  - Start button that takes the player to the main board and shuffles the deck.
 
-![Start Screen](/assets/images/readme-images/start-screen.png)
+![Game Screen](/readme/documentation/supp-images/site/mainscreen.png)
 
-#### Game Screen
+#### You Win Pop-up
 
-The game screen has two elements:
+The You Win Pop-up has two elements:
 
  - Timer bar - Counts from 0 to 100 and graphically displays the counting by moving a bar from left to right. The darker colour of the bar makes the timer visible in ”the corner of the eye” of the player and he/she does not have to look away from the game board.
 
  - Game board - At start 20 cards with symbols are shuffled and distributed across the board. The game starts the moment the game screen is visible to the player.
 
-![Game Screen](/assets/images/readme-images/game-screen.png)
+![You Win](/assets/images/readme-images/game-screen.png)
 
-#### End Screen
+#### Rules Pop-up
 
 Quick game is a linear game and all players end up at the end screen either the loose or win. Messages differ depending on win or loss. If a player does not enter a player name the standard player name of the game appears. The end screen displays:
 
@@ -168,7 +167,7 @@ Quick game is a linear game and all players end up at the end screen either the 
  - Play again button that generates a new game board and shuffles the cards.
  - Quit button that takes the player to the start screen
 
-![About us Section part 1](/assets/images/readme-images/end-screen.png)
+![Rules](/assets/images/readme-images/end-screen.png)
 
 ### Features Left to Implement
 
