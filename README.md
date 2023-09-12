@@ -110,29 +110,29 @@ Font chosen for the project is [Neucha](https://fonts.googleapis.com/css2?family
 
 #### Images
 The game cards are using icons created by wanicon from [flaticon](https://www.flaticon.com/).
-[Demon] - (https://www.flaticon.com/free-icons/devil)
-[Vampire] -(https://www.flaticon.com/free-icons/vampire)
-[Zombie] - (https://www.flaticon.com/free-icons/spooky)
-[Ghost] - (https://www.flaticon.com/free-icons/ghost)
-[Death] - (https://www.flaticon.com/free-icons/death)
-[Frankenstein] - (https://www.flaticon.com/free-icons/frankenstein)
-[Clown] - (https://www.flaticon.com/free-icons/spooky)
-[Mummy] - (https://www.flaticon.com/free-icons/mummy)
+- [Demon] - (https://www.flaticon.com/free-icons/devil)
+- [Vampire] -(https://www.flaticon.com/free-icons/vampire)
+- [Zombie] - (https://www.flaticon.com/free-icons/spooky)
+- [Ghost] - (https://www.flaticon.com/free-icons/ghost)
+- [Death] - (https://www.flaticon.com/free-icons/death)
+- [Frankenstein] - (https://www.flaticon.com/free-icons/frankenstein)
+- [Clown] - (https://www.flaticon.com/free-icons/spooky)
+- [Mummy] - (https://www.flaticon.com/free-icons/mummy)
 
 The the image for the back of the cards and the favicon is also created by wanicon and converted on [Favicon](https://favicon.io/)
-[Pumpkin] - (https://www.flaticon.com/free-icons/pumpkin)"
+- [Pumpkin] - (https://www.flaticon.com/free-icons/pumpkin)"
 
-[Back to top](#matchthemonsters)
+[Back to top](#matchthemonster!)
 
 ## Features 
 
-Match the Monsters! consists of one game screen and two pop-ups:
+Match the Monster! consists of one game screen and two pop-ups:
 
  - Game Screen
  - You Win Pop-up
  - Rules Pop-up
 
-When Match the Monsters! the game board is created and shuffled. The player ends up at the end screen at either a ”Win” or a ”Loss”.
+When Match the Monster! the game board is created and shuffled. The player ends up at the end screen at either a ”Win” or a ”Loss”.
 
 ### Existing Features
 
@@ -174,7 +174,7 @@ Quick game is a linear game and all players end up at the end screen either the 
 - Future version of this game will contain database with high scores.
 - Two more game modes, one harder and one easier.
 
-[Back to top](#quickmem)
+[Back to top](#matchthemonster!)
 
 ## Technologies used
 
@@ -224,59 +224,60 @@ This list contains the major bugs. There has been several smaller ones connected
 ### Validator Testing 
 
 - HTML
-  - No errors were returned when passing through the official [W3C Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fpelikantapeten.github.io%2Fp2-quickmem%2F)
+  - No errors were returned when passing through the official [W3C Validator](https://validator.w3.org/nu/#textarea)
 
-![W3C HTML Validator](/assets/images/readme-images/html-validator.png)
+![W3C HTML Validator](/readme/documentation/supp-images/validator/valhtml.png)
 
 - CSS
-  - No errors were returned when passing through the official [(Jigsaw validator)](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fpelikantapeten.github.io%2Fp2-quickmem%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  - No errors were returned when passing through the official [(Jigsaw validator)](https://jigsaw.w3.org/css-validator/validator)
 
-  - CSS validation passes with no errors but contains a warning. The warning indicates that the background colour and font colour of the class ”memory-card” are the same. This is on purpose since the game function to check memory cards depend on colour change. 
-
-![Jigsaw validator](/assets/images/readme-images/css-validator.png)
+![Jigsaw validator](/readme/documentation/supp-images/validator/valcss.png)
 
 - JavaScript
   - No errors or warnings was returned using [(JSHint)](https://jshint.com/) with "New JavaScript features (ES6)" activated in the configuration.
 
-![JSHint](/assets/images/readme-images/jshint-screen.png)
+![JSHint](/readme/documentation/supp-images/validator/valjs.png)
 
 - Lighthouse testing
 
-![Lighthouse testing score](/assets/images/readme-images/lighthouse.png)
+![Lighthouse testing score on desktop](/readme/documentation/supp-images/performance/performancedesktop.png)
+![Lighthouse testing score on moblile](/readme/documentation/supp-images/performance/porformancemobile.png)
+
 
 ### Unfixed Bugs
 
-- Some test players have experienced that card values get "stuck" if you are playing the game to fast. This requires further investigation.
+- When checking the responsiveness on https://ui.dev/amiresponsive I spotted that on the largest screen, 1600x992px, when the bottom right card is selected it doesn't flip. 
 
-- On screens with a resolution in height of 290px or less the face value (icons) are visible even if a card is not turned.
+ [Back to top](#matchthemonster!)
 
- [Back to top](#quickmem)
 
-## Development and Deployment
+### How this site was deployed
 
-The development environment used for this project was GitPod. To track the development stage and handle version control regular commits and pushes to GitHub has been conducted. The GitPod environment was created using a template provided by Code Institute.
+- In the GitHub repository, navigate to the Settings tab, then choose Pages from the left hand menu 
+- From the source section drop-down menu, select the main Branch
+- Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment
+- Any changes pushed to the master branch will take effect on the live project
 
-The live version of the project is deployed at GitHub pages.
+### How to clone the repository and push initial commit
 
-The procedure for deployment followed the "Creating your site" steps provided in [GitHub Docs.](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
+- Go to the https://github.com/maryclaireteahan/matchthemonster repository on GitHub 
+- Click the "Code" button to the right of the screen, click HTTPs and copy the link there
+- Open a GitBash terminal and navigate to the directory where you want to locate the clone
+- On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process
+- git add .
+- git commit -m "Initial commit"
+- git push
 
-1. Log into GitHub.
-2. Locate the GitHub Repository that shall be deployed live.
-3. At the top of the repository, select Settings from the menu items.
-4. Scroll down the Settings page to the ”GitHub Pages" section and click on the ”Check it out here!”
-5. At the ”Source” section choose ”main” as Branch and root as folder and click ”Save”
-6. The website will deploy and the pages refreshes to provide the live link to the project.
-
-The live link can be found here - https://pelikantapeten.github.io/p2-quickmem/
+The live link can be found here - https://maryclaireteahan.github.io/matchthemonster/
 
 ## Content 
 
 - All text content in this game has been produced by the author.
-- Icons [Font Awesome](https://fontawesome.com/)
+- Icons [flaticon](https://www.flaticon.com/)
 
 ## Media
 
-Apart from Google Fonts and FontAwesome no external media are used in the game.
+Apart from Google Fonts and flaticon no external media are used in the game.
 
 ## Credits 
 
@@ -300,4 +301,4 @@ I have consulted numerous websites, individuals and slack channels to get suppor
 
  [Am I Responsive](http://ami.responsivedesign.is/) was used to create the image on top of this ReadMe
 
-[Back to top](#quickmem)
+[Back to top](#matchthemonster!)
