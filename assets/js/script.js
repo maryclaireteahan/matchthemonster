@@ -1,15 +1,72 @@
-//Rules Button
+//Rules
+let rulesBtn = document.getElementById("rules-btn");
+let rulesDiv = document.getElementById("rules-div");
+let listItems = ["Click 2 cards to turn them over and reveal their monsters.",
+    "If the monsters match, they stay turned over.", "If they do not match the cards are turned back.",
+    "Keep going until all the monsters are turned over.",
+    "Try to remember where you have seen which monsters, so you can use them to make a match."
+];
 
+// Grid
+let gridContainerDiv = document.getElementById("grid-container-div");
+let gridContainer = document.createElement("div");
+let monsters = [
+    { src: "./assets/images/demon.png", alt: "Demon", dataName: "Demon" },
+    { src: "./assets/images/frankenstein.png", alt: "Frankenstein", dataName: "Frankenstein" },
+    { src: "./assets/images/clown.png", alt: "Clown", dataName: "Clown" },
+    { src: "./assets/images/mummy.png", alt: "Mummy", dataName: "Mummy" },
+    { src: "./assets/images/vampire.png", alt: "Vampire", dataName: "Vampire" },
+    { src: "./assets/images/death.png", alt: "Death", dataName: "Death" },
+    { src: "./assets/images/ghost.png", alt: "Ghost", dataName: "Ghost" },
+    { src: "./assets/images/zombie.png", alt: "Zombie", dataName: "Zombie" },
+    { src: "./assets/images/demon.png", alt: "Demon", dataName: "Demon" },
+    { src: "./assets/images/frankenstein.png", alt: "Frankenstein", dataName: "Frankenstein" },
+    { src: "./assets/images/clown.png", alt: "Clown", dataName: "Clown" },
+    { src: "./assets/images/mummy.png", alt: "Mummy", dataName: "Mummy" },
+    { src: "./assets/images/vampire.png", alt: "Vampire", dataName: "Vampire" },
+    { src: "./assets/images/death.png", alt: "Death", dataName: "Death" },
+    { src: "./assets/images/ghost.png", alt: "Ghost", dataName: "Ghost" },
+    { src: "./assets/images/zombie.png", alt: "Zombie", dataName: "Zombie" },
+];
+
+//Timer
+let timerId;
+let timer;
+let timerSpan = document.getElementById('timer');
+let timerStarted = false;
+
+//Moves
+var moves = 0;
+
+// Flip Cards
+let cards = document.getElementsByClassName("card");
+let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard, secondCard;
+
+//Restart
+let restartBtn = document.getElementById("restart-btn");
+
+//Event Listeners
+rulesBtn.addEventListener("click", rulesBtnClick);
+restartBtn.addEventListener("click", reset);
+
+
+//Rules 
+/** Function opens the Rules div
+ * Once the rules button is clicked and the div has appeared it is disabled to stop it opening more Rules div underneath the the current one.
+ * Rules appear in a numbered list
+ * A close button is added that, when clicked, removes the Rules div.
+ */
 function rulesBtnClick(event) {
 
-    //Disable rules button after one click
+    //Disable rules button after being clicked
     document.getElementById("rules-btn").disabled = true;
 
     // Create the a Div
     let rules = document.createElement("div");
 
     // Put the Div inside the HTML element rules-div
-    let rulesDiv = document.getElementById("rules-div");
     rulesDiv.appendChild(rules);
 
     // Put a h3 element inside the new Div
@@ -19,12 +76,6 @@ function rulesBtnClick(event) {
 
     // Create and put an ordered list under the h3 element
     let rulesList = document.createElement("ol");
-
-    let listItems = ["Click 2 cards to turn them over and reveal their monsters.",
-        "If the monsters match, they stay turned over.", "If they do not match the cards are turned back.",
-        "Keep going until all the monsters are turned over.",
-        "Try to remember where you have seen which monsters, so you can use them to make a match."
-    ];
 
     for (let i = 0; i < listItems.length; i++) {
         let listItem = document.createElement("li");
@@ -48,39 +99,13 @@ function rulesBtnClick(event) {
     closeBtn.addEventListener("click", closeBtnClick);
 }
 
-// Select HTML button element and assign an event listener
-let rulesBtn = document.getElementById("rules-btn");
-
-rulesBtn.addEventListener("click", rulesBtnClick);
-
 // Grid
-
-let gridContainerDiv = document.getElementById("grid-container-div");
-
-let gridContainer = document.createElement("div");
 gridContainer.classList.add("grid-container");
 gridContainerDiv.appendChild(gridContainer);
 
-//Add monsters to the grid
-let monsters = [
-    { src: "./assets/images/demon.png", alt: "Demon", dataName: "Demon" },
-    { src: "./assets/images/frankenstein.png", alt: "Frankenstein", dataName: "Frankenstein" },
-    { src: "./assets/images/clown.png", alt: "Clown", dataName: "Clown" },
-    { src: "./assets/images/mummy.png", alt: "Mummy", dataName: "Mummy" },
-    { src: "./assets/images/vampire.png", alt: "Vampire", dataName: "Vampire" },
-    { src: "./assets/images/death.png", alt: "Death", dataName: "Death" },
-    { src: "./assets/images/ghost.png", alt: "Ghost", dataName: "Ghost" },
-    { src: "./assets/images/zombie.png", alt: "Zombie", dataName: "Zombie" },
-    { src: "./assets/images/demon.png", alt: "Demon", dataName: "Demon" },
-    { src: "./assets/images/frankenstein.png", alt: "Frankenstein", dataName: "Frankenstein" },
-    { src: "./assets/images/clown.png", alt: "Clown", dataName: "Clown" },
-    { src: "./assets/images/mummy.png", alt: "Mummy", dataName: "Mummy" },
-    { src: "./assets/images/vampire.png", alt: "Vampire", dataName: "Vampire" },
-    { src: "./assets/images/death.png", alt: "Death", dataName: "Death" },
-    { src: "./assets/images/ghost.png", alt: "Ghost", dataName: "Ghost" },
-    { src: "./assets/images/zombie.png", alt: "Zombie", dataName: "Zombie" },
-];
-
+/** Shuffle monsters
+ * Monsters are shuffled using the Fisher Yates method
+ */
 const shuffleMonsters = monsters => {
     for (let i = monsters.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -101,14 +126,13 @@ for (let monster of monsters) {
     monsterImg.alt = monster.alt;
     monsterImg.dataset.dataName = monster.dataName;
     monsterImg.classList.add("card-front");
-
+    //Add card for each monster image
     card.appendChild(monsterImg);
 
     // Add the image element to the gridContainer div
     gridContainer.appendChild(card);
 
     // Create an image element with the url and alt attributes for the back of the card
-
     let backImg = document.createElement("img");
     backImg.src = "./assets/images/pumpkin.png";
     backImg.alt = "pmupkin";
@@ -118,11 +142,9 @@ for (let monster of monsters) {
 }
 
 //Timer
-let timerId;
-let timer;
-let timerSpan = document.getElementById('timer');
-let timerStarted = false;
 
+/** Function starts timer when first card is clicked
+ */
 function startTimer() {
     if (timerStarted) return;
     timer = 0;
@@ -133,20 +155,18 @@ function startTimer() {
     timerStarted = true;
 }
 
-//Moves
-var moves = 0;
-
 // Flip Cards
-let cards = document.getElementsByClassName("card");
 
-let hasFlippedCard = false;
-let lockBoard = false;
-let firstCard, secondCard;
+// To enable or disable clicks, just change the value of freezeClick
 
+/**Function for flipping cards
+ * 
+ * @returns 
+ */
 function flipCard() {
     // Check if the card is already flipped
     if (this.isFlipped) return;
-
+ 
     // Set the card state to flipped
     this.isFlipped = true;
 
@@ -168,9 +188,15 @@ function flipCard() {
     }
 
     //Second click
-    secondCard = this;
-
-    checkForMatch();
+    
+    secondCard = this
+    for (let card of cards) {
+        card.removeEventListener("click", flipCard);
+    }
+    checkForMatch()
+    for (let card of cards) {
+        card.addEventListener("click", flipCard);
+    }
 }
 
 //Function to see if the two selected cards match
@@ -188,7 +214,7 @@ function checkForMatch() {
     const closeBtn = document.createElement("button");
 
     if (isMatch) { disableCards(); } else { unflipCards(); }
-
+   
     //You Win popup when game is over
     if (document.querySelectorAll('.flip').length === cards.length) {
         clearInterval(timerId); // stop the timer
@@ -234,6 +260,12 @@ function unflipCards() {
         resetBoard();
     }, 1000);
 }
+
+/**
+ * Resets board back to how it was before the last two clicks
+ * flips the cards back over and sets their values to null
+ * 
+ */
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
     [firstCard, secondCard] = [null, null];
@@ -244,10 +276,7 @@ for (let card of cards) {
 }
 
 //Restart Button
+/** Refreshes the web browser when the user selects "Restart" */
 function reset() {
     location.reload();
 }
-
-let restartBtn = document.getElementById("restart-btn");
-restartBtn.addEventListener("click", reset);
-
