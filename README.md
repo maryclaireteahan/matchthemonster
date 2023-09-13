@@ -51,7 +51,7 @@ A live version of the project can be found here - https://maryclaireteahan.githu
 
 This game is ment for:
 
- - All individuals, regarding age, that wants to play a straightforward, halloween themed game.
+ - All individuals that want to play a straightforward, halloween themed game.
 
 ### User Stories
 
@@ -113,6 +113,9 @@ The colour palette was created using [Coolors](https://coolors.co/).
 Font chosen for the project is [Neucha](https://fonts.googleapis.com/css2?family=Neucha&display=swap)
 
 #### Images
+
+![Monsters](/readme/documentation/supp-images/site/monsters.png)
+
 The game cards are using icons created by wanicon from [flaticon](https://www.flaticon.com/).
 - [Demon] - (https://www.flaticon.com/free-icons/devil)
 - [Vampire] -(https://www.flaticon.com/free-icons/vampire)
@@ -198,13 +201,13 @@ The rules pop-up consisted of a numbered list of rules for the game. It also fea
 - Lighthouse testing
 
 ![Lighthouse testing score on desktop](/readme/documentation/supp-images/performance/performancedesktop.png)
-![Lighthouse testing score on moblile](/readme/documentation/supp-images/performance/porformancemobile.png)
+![Lighthouse testing score on moblile](/readme/documentation/supp-images/performance/performancemobile.png)
 
 
 ### Unfixed Bugs
 
 - When checking the responsiveness on https://ui.dev/amiresponsive I spotted that on the largest screen, 1600x992px, when the bottom right card is selected it doesn't flip. 
-- When playing the game on a phone screen if you click through each card, in order, without trying to find a match all the cards will flip. However, once you start clicking random cards to find pairs, between 1 and 3 different cards stop working. 
+- Occasionally, when playing the game on a phone screen if you click through each card, in order, without trying to find a match all the cards will flip. However, once you start clicking random cards to find pairs, between 1 and 3 different cards stop working. 
 
 ### How this site was deployed
 
