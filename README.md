@@ -249,6 +249,6 @@ I have consulted numerous websites, individuals and slack channels to get suppor
 
 ### Acknowledgment
 
- - Thank you to my mentor Lauren-Nicole who gave me very good advice and feedback on how to plan and execute this project and who provided me with lots of pointers on resources to help with coding and testing. I'm grateful for her patience and understanding.
+ - Thank you to my mentor Lauren-Nicole who gave me great advice and feedback on how to plan and execute this project and who provided me with lots of pointers on resources to help with coding and testing. I'm grateful for her patience, understanding and ability to bring calm to a stressful situation.
 
  [Am I Responsive](http://ami.responsivedesign.is/) was used to create the image on top of this ReadMe
