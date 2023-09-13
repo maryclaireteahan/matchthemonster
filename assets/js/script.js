@@ -144,11 +144,11 @@ let lockBoard = false;
 let firstCard, secondCard;
 
 function flipCard() {
-// Check if the card is already flipped
-if (this.isFlipped) return;
+    // Check if the card is already flipped
+    if (this.isFlipped) return;
 
-// Set the card state to flipped
-this.isFlipped = true;
+    // Set the card state to flipped
+    this.isFlipped = true;
 
     moves++;
 

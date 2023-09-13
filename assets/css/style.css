@@ -14,10 +14,6 @@
       flex-direction: column;
   }
 
-  header {
-      display: none;
-  }
-
   /** Heading**/
   .title {
       position: absolute;
@@ -39,7 +35,7 @@
       padding: 5px 10px;
   }
 
-  /** rules, close rules and Restart button **/
+  /** Rules, Close Rules and Restart button **/
   .buttons-div {
       display: inline-flex;
       justify-content: space-between;
@@ -125,6 +121,58 @@
       letter-spacing: 1px;
   }
 
+  /* Results - Moves and Time */
+  .results {
+
+      display: inline-flex;
+      position: relative;
+      justify-content: space-around;
+  }
+
+  p {
+      color: #398516;
+  }
+
+  /* You Win Pop-up*/
+  #pop-up {
+      display: flex;
+      justify-content: center;
+      height: 220px;
+      top: 50px;
+      position: relative;
+  }
+
+  .you-win-div {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      border-style: solid;
+      border-color: black;
+      border-radius: 15px;
+      box-shadow: 0 5px rgb(9, 23, 9);
+      z-index: 2;
+      background-color: #7c0200;
+      width: 200px;
+      align-content: center;
+      align-items: center;
+  }
+
+  .you-win-div h3 {
+      font-size: 30px;
+      position: relative;
+      bottom: 10%;
+  }
+
+  .you-win-div p {
+      color: black;
+      text-align: center;
+  }
+
+  .you-win-div button {
+      position: relative;
+      top: 15%;
+  }
+
   /* Card Game Grid */
   .grid-container {
       background-color: #5e0202;
@@ -146,8 +194,6 @@
       padding: 10px;
       perspective: 1000px;
   }
-
-  /* Define the grid cell styles */
 
   .card {
       position: relative;
@@ -186,59 +232,6 @@
 
   .card.flip {
       transform: rotateY(180deg);
-  }
-
-  /* results */
-  .results {
-
-      display: inline-flex;
-      top: 30px;
-      right: 15px;
-      justify-content: space-around;
-  }
-
-  p {
-      color: #398516;
-  }
-
-  /* You Win popup*/
-  #pop-up {
-      display: flex;
-      justify-content: center;
-      height: 220px;
-      top: 50px;
-      position: relative;
-  }
-
-  .you-win-div {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      border-style: solid;
-      border-color: black;
-      border-radius: 15px;
-      box-shadow: 0 5px rgb(9, 23, 9);
-      z-index: 2;
-      background-color: #7c0200;
-      width: 200px;
-      align-content: center;
-      align-items: center;
-  }
-
-  .you-win-div h3 {
-      font-size: 30px;
-      position: relative;
-      bottom: 10%;
-  }
-
-  .you-win-div p {
-      color: black;
-      text-align: center;
-  }
-
-  .you-win-div button {
-      position: relative;
-      top: 15%;
   }
 
   /* Media query: large or landscape phones (576px and up) -----------------------------------------------576px----------------------------------------------------------------------- */
@@ -283,26 +276,9 @@
   /* Media query: tablets and larger (768px and up) ------------------------------------------------------768px----------------------------------------------------------------------- */
   @media screen and (min-width: 768px) {
 
-      .grid-container {
-          width: 445px;
-          grid-gap: 25px 55px;
-          height: 380px;
-      }
-
-      .grid-container div {
-          left: 15%;
-          top: 18%;
-      }
-
-      .card {
-          width: 75px;
-          height: 75px;
-      }
-
-      .results {
-          top: 8px;
-          left: 11px;
-          flex-direction: column;
+      #rules-btn {
+          left: 50px;
+          width: 80px;
       }
 
       #restart-btn {
@@ -310,9 +286,10 @@
           width: 80px;
       }
 
-      #rules-btn {
-          left: 50px;
-          width: 80px;
+      .results {
+          top: 8px;
+          left: 11px;
+          flex-direction: column;
       }
 
       p {
@@ -330,6 +307,23 @@
       .you-win-div p {
           font-size: 25px;
       }
+
+      .grid-container {
+          width: 445px;
+          grid-gap: 25px 55px;
+          height: 380px;
+      }
+
+      .grid-container div {
+          left: 15%;
+          top: 18%;
+      }
+
+      .card {
+          width: 75px;
+          height: 75px;
+      }
+
   }
 
   /* Large devices (laptops and desktops, 992px and up) -----------------------------------------------992px---------------------------------------------------------------------------- */
@@ -347,6 +341,29 @@
           font-size: 25px;
       }
 
+      .close-btn {
+          font-size: 25px;
+          width: 100px;
+      }
+
+      #restart-btn {
+          right: 75px;
+          width: 100px;
+      }
+
+      #rules-btn {
+          left: 75px;
+          width: 100px;
+      }
+
+      #rules-div h3 {
+          font-size: 40px;
+      }
+
+      .you-win-div {
+          width: 300px;
+      }
+
       .grid-container {
           height: 440px;
           width: 575px;
@@ -359,41 +376,19 @@
           left: 58%;
           top: 28%;
       }
-
-      #restart-btn {
-          right: 75px;
-          width: 100px;
-      }
-
-      #rules-btn {
-          left: 75px;
-          width: 100px;
-      }
-      #rules-div h3 {
-        font-size: 40px;
-    }
-    
-      .close-btn {
-          font-size: 25px;
-          width: 100px;
-      }
-
-      .you-win-div {
-          width: 300px;
-      }
   }
 
   /* Large devices (laptops and desktops, 1200px and up) -----------------------------------------------1200--------------------------------------------------------------------------- */
   @media screen and (min-width: 1200px) {
 
-      .grid-container {
-          width: 575px;
-          grid-gap: 40px 80px;
-      }
-
       ol {
           line-height: 41px;
           font-size: 25px;
           letter-spacing: 2px;
+      }
+
+      .grid-container {
+          width: 575px;
+          grid-gap: 40px 80px;
       }
   }
