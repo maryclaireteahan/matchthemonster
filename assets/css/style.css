@@ -125,7 +125,7 @@
   .results {
 
       display: inline-flex;
-      top: 3rem;
+      top: 70px;
       right: 15px;
       justify-content: space-around;
       position: relative;
