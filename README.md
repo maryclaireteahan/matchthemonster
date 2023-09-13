@@ -2,7 +2,7 @@
 
 ![Responsive screenshot](/readme/documentation/supp-images/amiresponsive.png)
 
-# The purpose with this project
+<h1 align="center">Match the Monster!</h1>
 
 Match the Monster! is a fun halloween themed memory game. The purpose of the game is the challenge the player to match all 8 pairs of monsters in as few moves, and as little time as possible. The user interface is clean and simple. There is no distracting imagery or features so the focus is kept on the game. The game itself is straightforward, with fun monster images and the ability to see how many moves you've made and how much time you've spent on the game so far.
 
@@ -61,7 +61,7 @@ The user stories between new and old players differ just slightly since it is a 
 
  - I want to try the game.
  - I want to win the game
- - I want to match the 8 pairs in fewer moves and in less time than my last try.
+ - I want to match the 8 pairs in as few moves and in as little time as possible.
 
 #### Old players
 
@@ -84,7 +84,7 @@ The user stories between new and old players differ just slightly since it is a 
 
 ### Design
 
-TheIt was decided that the game design would be fun while also staying simple. Seeing as it is a memory game and all focus needs to be kept on the game it made sense to keep all elements outside the game as simple as possible and incorpoate the fun side of the design into the actual game. Initially the backgrounds had spooky images but it seemed too distracting so all background areas were given a colour. It made sense that the card images should be where the fun comes in. Different images were sourced from the website flaticon which is credited below. To keep the images consistent in style, they were all sourced from the same artist, wanicon, who is credited below.
+It was decided that the game design would be fun while also staying simple. Seeing as it is a timed memory game and all focus needs to be kept on the game it made sense for all elements outside the game to be as simple as possible and incorpoate the fun side of the design into the actual game. Initially the backgrounds had spooky images but it seemed too distracting so images were removed from all background areas and they were given a block colour instead. It made sense that the card images should be where the fun comes in. Different images were sourced from the website flaticon which is credited below. Initially the images seemed to clash as they were created by different artists and had different styles. In the end, to keep the style consistent, certain images were replaces so that they were all sourced from the same artist, wanicon, who is credited below.
 
 #### Design Discovery Phase
 
@@ -146,17 +146,17 @@ The Game Screen consists of a header and body. In the body are the main title, a
 
 The You Win Pop-up tells you how much time and moves it took for you to finish the game. It also featured a close button which removed the pop-up.
 
-![You Win](/assets/images/readme-images/game-screen.png)
+![You Win](/readme/documentation/supp-images/site/youwin.png)
 
 #### Rules Pop-up
 
 The rules pop-up consisted of a numbered list of rules for the game. It also featured a close button which removed the pop-up.
 
-![Rules](/assets/images/readme-images/end-screen.png)
+![Rules](/readme/documentation/supp-images/site/rules.png)
 
 ### Features Left to Implement
 
-- Future version of this game will allow the player to input their name and have their score listed on a score board with along with the recent scores.
+- Future version of this game will allow the player to input their name and have their score listed on a score board.
 - When a pair of monsters have been matched a scary sound effect will play. Each monster will have their own sound for example, a sinsiter laugh will play when the evil clown cards are matched, a ghostly wail when the ghost cards are matched.
 
 ## Technologies used
