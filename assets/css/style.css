@@ -125,9 +125,10 @@
   .results {
 
       display: inline-flex;
-      top: 60px;
+      top: 3rem;
       right: 15px;
       justify-content: space-around;
+      position: relative;
   }
 
   p {
