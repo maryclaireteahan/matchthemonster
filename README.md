@@ -157,7 +157,7 @@ The rules pop-up consisted of a numbered list of rules for the game. It also fea
 ### Features Left to Implement
 
 - Future version of this game will allow the player to input their name and have their score listed on a score board with along with the recent scores.
-- When a pair of monsters have been matched a scary sound effect will play. Each monster will have their own sound for example, the clown will have a sinister laugh sound play.
+- When a pair of monsters have been matched a scary sound effect will play. Each monster will have their own sound for example, a sinsiter laugh will play when the evil clown cards are matched, a ghostly wail when the ghost cards are matched.
 
 ## Technologies used
 
