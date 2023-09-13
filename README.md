@@ -126,8 +126,6 @@ The game cards are using icons created by wanicon from [flaticon](https://www.fl
 The the image for the back of the cards and the favicon is also created by wanicon and converted on [Favicon](https://favicon.io/)
 - [Pumpkin] - (https://www.flaticon.com/free-icons/pumpkin)"
 
-[Back to top](#match)
-
 ## Features 
 
 Match the Monster! consists of one game screen and two pop-ups:
@@ -160,8 +158,6 @@ The rules pop-up consisted of a numbered list of rules for the game. It also fea
 
 - Future version of this game will allow the player to input their name and have their score listed on a score board with along with the recent scores.
 - When a pair of monsters have been matched a scary sound effect will play. Each monster will have their own sound for example, the clown will have a sinister laugh sound play.
-
-[Back to top](#match)
 
 ## Technologies used
 
@@ -210,9 +206,6 @@ The rules pop-up consisted of a numbered list of rules for the game. It also fea
 - When checking the responsiveness on https://ui.dev/amiresponsive I spotted that on the largest screen, 1600x992px, when the bottom right card is selected it doesn't flip. 
 - When playing the game on a phone screen if you click through each card, in order, without trying to find a match all the cards will flip. However, once you start clicking random cards to find pairs, between 1 and 3 different cards stop working. 
 
- [Back to top](#match)
-
-
 ### How this site was deployed
 
 - In the GitHub repository, navigate to the Settings tab, then choose Pages from the left hand menu 
@@ -256,5 +249,3 @@ I have consulted numerous websites, individuals and slack channels to get suppor
  - Thank you to my mentor Lauren-Nicole who gave me very good advice and feedback on how to plan and execute this project and who provided me with lots of pointers on resources to help with coding and testing. I'm grateful for her patience and understanding.
 
  [Am I Responsive](http://ami.responsivedesign.is/) was used to create the image on top of this ReadMe
-
-[Back to top](#match)
