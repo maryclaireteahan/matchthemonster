@@ -172,6 +172,28 @@ The rules pop-up consisted of a numbered list of rules for the game. It also fea
 
 - Page sizes from 320px-1920px
 
+- The console is free from errors
+
+- Rules Button
+
+  - When the user selects the Rules button a div pops up with a numbered list of rules for the game. Underneath is a button that says close.
+
+- Close Button
+
+  - When the user presses the Close button the Rules div is removed. The div can be called upon and removed over and over again using the Rules and Close buttons.
+
+- Restart Button
+
+  - When the user presses the restart button it refreshes the web page.
+
+- Cards
+
+  - When the user clicks a card it turns over to reveal an image. This card remains like this until a second card clicked. This card turns over to reveal it's image. If the images match the cards stay turned over. If the images don't match the cards flip back.
+
+- End of Game
+
+  - When the user has matched all the cards a div will pop up with the message "You Win!" along with the number of moves and time it took to win.
+
 - Moves feature would only increment in 2s after each second click. While the number of moves was correct, it would only update after the second click.
 
   - My moves increment operand needed to be removed from it's initial function and placed in another one.
