@@ -186,19 +186,27 @@ The rules pop-up consisted of a numbered list of rules for the game. It also fea
 
   - When the user presses the restart button it refreshes the web page.
 
+- Time
+
+  - The Time feature begins timing how long the user spends at the game from the first card they click. It increments in seconds and is shown beside the grid.
+
+- Moves
+
+  - The Moves feature tracks how many moves the user makes from the first card they click until they finish the game. It increments in 1 move per card flip and is shown beside the grid.
+
 - Cards
 
   - When the user clicks a card it turns over to reveal an image. This card remains like this until a second card clicked. This card turns over to reveal it's image. If the images match the cards stay turned over. If the images don't match the cards flip back.
 
 - End of Game
 
-  - When the user has matched all the cards a div will pop up with the message "You Win!" along with the number of moves and time it took to win.
+  - When the user has matched all the cards a div will pop up with the message "You Win!" along with the number of moves and time it took to win. Under this message is another Close button. This button acts in the same way as the Close button in the Rules div. If the user clicks it it will disappear leaving the completed game grid with all cards showing. At this point the user will press the Restart button to play again.
 
-- Moves feature would only increment in 2s after each second click. While the number of moves was correct, it would only update after the second click.
+- Moves bug 
 
-  - My moves increment operand needed to be removed from it's initial function and placed in another one.
+  -The feature would only increment in 2s after each second click. While the number of moves showing was correct, it would only update after the second click. My moves increment operand needed to be removed from it's initial function and placed in another one. The feature is now working properly
 
-- Restart Button
+- Restart Button bug
 
   - I wanted to include a restart button. When I would press it the cards would flip back over but they wouldn't shuffle, also the timer would start immediately rather than from my first move. I edited the button so that the page reloads when it is pressed.
 
@@ -229,7 +237,7 @@ The rules pop-up consisted of a numbered list of rules for the game. It also fea
 ### Unfixed Bugs
 
 - When checking the responsiveness on https://ui.dev/amiresponsive I spotted that on the largest screen, 1600x992px, when the bottom right card is selected it doesn't flip. 
-- Occasionally, when playing the game on a phone screen if you click through each card, in order, without trying to find a match all the cards will flip. However, once you start clicking random cards to find pairs, between 1 and 3 different cards stop working. 
+- In order to make a match you need to click the first card to flip it and then the second card to flip it. If they don't match they flip back after 1 second and you can move onto your next choices. However, if you manage to click a third and fourth card before the first two cards flip back, it will disable the last two cards clicked. They will remain disabled so the user will be unable to finish the game. 
 
 ### How this site was deployed
 
