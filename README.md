@@ -74,17 +74,21 @@ The user stories between new and old players differ just slightly since it is a 
 
 ### Project Requirements
 
- - To build an interactive front-end site that responds to user actions. The user should engage actively by altering data and how the site displays. The development process needs to be well documented through a version controls system such as GitHub and contain HTML5, CSS3 and JavaScript.
+ -  Design an interactive Front-End web application using HTML and CSS and JavaScript based on the principles of user experience design, accessibility and responsivity.
+ - Test a front-end web application through the development, implementation and deployment stages.
+ - Deploy a Front-End web application to a Cloud platform.
+ - Maximise future maintainability through documentation, code structure and organisation.
+ - Demonstrate and document the development process through a version control system such as GitHub.
+ - Implement Front-End interactivity, using core JavaScript, JavaScript libraries or frameworks.
+ 
 
 ### Design
 
-During the thought process regarding design a decision was taken to keep the design as minimalistic as possible. Being a memory game the concept of ”less is more” was adapted with the purpose to minimise player distraction. The game is ment to be a fast playing game and there for it does not contain any animations that could lead to frustration from a player perspective.
+TheIt was decided that the game design would be fun while also staying simple. Seeing as it is a memory game and all focus needs to be kept on the game it made sense to keep all elements outside the game as simple as possible and incorpoate the fun side of the design into the actual game. Initially the backgrounds had spooky images but it seemed too distracting so all background areas were given a colour. It made sense that the card images should be where the fun comes in. Different images were sourced from the website flaticon which is credited below. To keep the images consistent in style, they were all sourced from the same artist, wanicon, who is credited below.
 
 #### Design Discovery Phase
 
-Balsamiq was used as a tool during the discovery phase in order to understand how the design could be in correlation to gamin experience. Several different colour palettes where tested before the final choice was made. Simplicity and friendly were two keywords used to determine the final design suggestion.
-
-The game consists of three screens, Start, Game and End. The final version of the wireframe and design are presented below this text.
+The game consists of one screen, the game screen, and two pop-ups for rules and a "You Win!" message at the end of the game. The final version of the wireframe and design are presented below this text.
 
 Game Screen
 
@@ -122,7 +126,7 @@ The game cards are using icons created by wanicon from [flaticon](https://www.fl
 The the image for the back of the cards and the favicon is also created by wanicon and converted on [Favicon](https://favicon.io/)
 - [Pumpkin] - (https://www.flaticon.com/free-icons/pumpkin)"
 
-[Back to top](#matchthemonster!)
+[Back to top](#match)
 
 ## Features 
 
@@ -132,49 +136,32 @@ Match the Monster! consists of one game screen and two pop-ups:
  - You Win Pop-up
  - Rules Pop-up
 
-When Match the Monster! the game board is created and shuffled. The player ends up at the end screen at either a ”Win” or a ”Loss”.
-
 ### Existing Features
 
 #### Game Screen
 
-The Game Screen consists of a header and a paragraph that contains the games main title and the rules. Other elements are:
-
- - Text that tells player to enter name, this is optional
- - Input field for player name (optional)
- - Start button that takes the player to the main board and shuffles the deck.
+The Game Screen consists of a header and body. In the body are the main title, a grid container with 16 divs that store the cards, there is a timespan and a moves span which track time spent and moves taken. There are two buttons, one which brings up the rules and one which reloads the page. 
 
 ![Game Screen](/readme/documentation/supp-images/site/mainscreen.png)
 
 #### You Win Pop-up
 
-The You Win Pop-up has two elements:
-
- - Timer bar - Counts from 0 to 100 and graphically displays the counting by moving a bar from left to right. The darker colour of the bar makes the timer visible in ”the corner of the eye” of the player and he/she does not have to look away from the game board.
-
- - Game board - At start 20 cards with symbols are shuffled and distributed across the board. The game starts the moment the game screen is visible to the player.
+The You Win Pop-up tells you how much time and moves it took for you to finish the game. It also featured a close button which removed the pop-up.
 
 ![You Win](/assets/images/readme-images/game-screen.png)
 
 #### Rules Pop-up
 
-Quick game is a linear game and all players end up at the end screen either the loose or win. Messages differ depending on win or loss. If a player does not enter a player name the standard player name of the game appears. The end screen displays:
-
- - Header that tells the player if they won or lost.
- - Paragraph telling the player how many pairs they were able to match.
- - Paragraph telling the player how many tries it took to find the pairs.
- - Paragraph with two different messages depending on win/lose.
- - Play again button that generates a new game board and shuffles the cards.
- - Quit button that takes the player to the start screen
+The rules pop-up consisted of a numbered list of rules for the game. It also featured a close button which removed the pop-up.
 
 ![Rules](/assets/images/readme-images/end-screen.png)
 
 ### Features Left to Implement
 
-- Future version of this game will contain database with high scores.
-- Two more game modes, one harder and one easier.
+- Future version of this game will allow the player to input their name and have their score listed on a score board with along with the recent scores.
+- When a pair of monsters have been matched a scary sound effect will play. Each monster will have their own sound for example, the clown will have a sinister laugh sound play.
 
-[Back to top](#matchthemonster!)
+[Back to top](#match)
 
 ## Technologies used
 
@@ -184,42 +171,16 @@ Quick game is a linear game and all players end up at the end screen either the 
 
 ## Testing 
 
-- Initial testing showed that the function I used to create the game cards did not get the correct information from my main game array. The cards was not generated properly. I struggled a lot with this and made several attempts to change the information in the array but nothing seemed to work.
+- Page sizes from 320px-1920px
 
-  - The solution to this problem was simpler than I first expected. My Array contains the class names of 10 different FontAwesome icons and my function did not generate any inner HTML in the DIV-tags that are the cards. After a change in the function so that it adds a i-tag with a class attribute from the array solved the issue.
+- Moves feature would only increment in 2s after each second click. While the number of moves was correct, it would only update after the second click.
 
-- Game Card not responding to clicks.
+  - My moves increment operand needed to be removed from it's initial function and placed in another one.
 
-  - My event listener was not correct and placed outside the function that generates the cards.
+- Restart Button
 
-- Console log constantly gave an error due ot missing favicon. I figured that this is either connected to the Code Institute template or to GitPod. 
+  - I wanted to include a restart button. When I would press it the cards would flip back over but they wouldn't shuffle, also the timer would start immediately rather than from my first move. I edited the button so that the page reloads when it is pressed.
 
-  - I added the favicon from ”Love Maths” and that removed the error. Later I updated with my own favicon.
-
-- Selected cards do not change colour upon clicks
-
-  - I was not able to correctly identify the correct card (div) and it’s inner HTML. The solution was to get the ID of the selected DIV-tag and change the attribute color using this.getAttribute.
-
-- Game cards did not compare correctly. All cards are considered to be a match.
-
-  - When comparing 0 and 1 in the Array with selected cards all were a match. It took me some time to figure out why. After a console.log I noticed that the value of both cards were set to Object. I tried to convert the entries in the Array to strings and strings became identical as well HTMLObject. I resorted to W3 Schools and found an attribute called data- that could be applied with almost any value. I had to go back to the function that generates the board and added the attribute data-id with the same value as the class name of the icons. This value was then pushed in the array of selected cards and the matchmaking worked.
-
-- Upon restart of the game from the End screen or the scenario End Screen - Quit - Start. The game board consisted of 40 cards instead of 20. For each try it added a new set of cards.
-
-  - I wrote a function that clears all inner HTML for the DIV that is the main game board and called that function upon restart and quit.
-
-- The game card are not re-shuffeling when you press Play Again.
-
-  - The line of code that shuffles and creates the variable cardDeck was not placed inside the function that generates the board. When it was moved there the bug was fixed.
-
-- The End Screen flickers when the timer reaches 100.
-
-  - A loop was created due to badly placed console.log and the fact that the timer restarted in the background. Added a stop to the timer at won game and removed the console.log
-
-- If a player wins a game, plays again and looses the messages is still that one of a win.
-  - Made a function that restores the message and cal the function from the Quit and Play again button.
-
-This list contains the major bugs. There has been several smaller ones connected to misspelled syntaxt and such that has been solved in under 1-2 minutes.
 
 ### Validator Testing 
 
@@ -247,8 +208,9 @@ This list contains the major bugs. There has been several smaller ones connected
 ### Unfixed Bugs
 
 - When checking the responsiveness on https://ui.dev/amiresponsive I spotted that on the largest screen, 1600x992px, when the bottom right card is selected it doesn't flip. 
+- When playing the game on a phone screen if you click through each card, in order, without trying to find a match all the cards will flip. However, once you start clicking random cards to find pairs, between 1 and 3 different cards stop working. 
 
- [Back to top](#matchthemonster!)
+ [Back to top](#match)
 
 
 ### How this site was deployed
@@ -285,20 +247,14 @@ Apart from Google Fonts and flaticon no external media are used in the game.
 
 I have consulted numerous websites, individuals and slack channels to get support for the code. No code block is directly copied but some generates from information I gathered from other developers and sites:
 
- - [Mdn web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) for information about Arrays and also identifying bugs.
- - [Code Institute - Love Running](https://github.com/Code-Institute-Solutions/love-running-2.0-sourcecode) for inspiration to game footer.
- - [Code Institute - Love Maths](https://github.com/Code-Institute-Solutions/love-maths-2.0-sourcecode) for inspiration to design of user interface.
- - [DevelopedByEd](https://developedbyed.com/) that taught me in his vides on how to generate a board of cards and display it as a CSS grid.
+ - [Marina Ferreira](https://www.youtube.com/watch?v=ZniVgo8U7ek&t=764s&ab_channel=freeCodeCamp.org) that taught me in her videos how to flip, unflip and match the cards.
  - [W3 Schools](https://www.w3schools.com/jsref/met_element_addeventlistener.asp) for understanding Event Listeners. 
- - [W3 Schools](https://www.w3schools.com/w3css/w3css_progressbar.asp) for the developing of my progress bar on the main game screen.
+ - [W3 Schools](https://www.w3schools.com/js/js_array_sort.asp) for understanding The Fisher Yates method.
 
 ### Acknowledgment
 
- - [Lauren-Nicole Popich](https://www.linkedin.com/in/lauren-nicole-popich-1ab87539/) My incredible fellow student. Thank you for all discussions, testing, comments, insights and support and leading me out of frustration.
- - [Martina Terlevic](https://www.linkedin.com/in/martinaterlevic/) My fantastic mentor at Code Institute, thank you for your support, feedback and humor.
-
- And to all the rest of my fellow student that have tested the actual game and provided me with feedback on playability.
+ - Thank you to my mentor Lauren-Nicole who gave me very good advice and feedback on how to plan and execute this project and who provided me with lots of pointers on resources to help with coding and testing. I'm grateful for her patience and understanding.
 
  [Am I Responsive](http://ami.responsivedesign.is/) was used to create the image on top of this ReadMe
 
-[Back to top](#matchthemonster!)
+[Back to top](#match)
