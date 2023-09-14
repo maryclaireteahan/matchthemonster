@@ -54,6 +54,7 @@ rulesBtn.addEventListener("click", rulesBtnClick);
 restartBtn.addEventListener("click", reset);
 
 //Rules 
+
 /** Function opens the Rules div
  * Once the rules button is clicked and the div has appeared it is disabled to stop it opening more Rules div underneath the the current one.
  * Rules appear in a numbered list
@@ -121,7 +122,6 @@ const shuffleMonsters = monsters => {
 shuffleMonsters(monsters);
 
 for (let monster of monsters) {
-    // Create an image element with the url and alt attributes for the front of the card
     let card = document.createElement("div");
     card.classList.add("card");
 
@@ -130,13 +130,11 @@ for (let monster of monsters) {
     monsterImg.alt = monster.alt;
     monsterImg.dataset.dataName = monster.dataName;
     monsterImg.classList.add("card-front");
-    //Add card for each monster image
+
     card.appendChild(monsterImg);
 
-    // Add the image element to the gridContainer div
     gridContainer.appendChild(card);
 
-    // Create an image element with the url and alt attributes for the back of the card
     let backImg = document.createElement("img");
     backImg.src = "./assets/images/pumpkin.png";
     backImg.alt = "pmupkin";
@@ -307,6 +305,7 @@ for (let card of cards) {
 }
 
 //Restart Button
+
 /** Refreshes the web browser when the user selects "Restart"
  */
 function reset() {
