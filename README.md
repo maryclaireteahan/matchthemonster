@@ -198,7 +198,7 @@ The rules pop-up consisted of a numbered list of rules for the game. It also fea
 
 - Cards
 
-  - When the user clicks a card it turns over to reveal an image. This card remains like this until a second card clicked. This card turns over to reveal it's image. If the images match the cards stay turned over. If the images don't match the cards flip back.
+  - When the user clicks a card it turns over to reveal an image. This card remains like this until a second card clicked. This card turns over to reveal it's image. If the images match the cards stay turned over. If the images don't match the cards flip back. The user is not able to click and select the same card twice.
 
 - End of Game
 
