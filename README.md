@@ -281,7 +281,7 @@ I have consulted numerous websites, individuals and slack channels to get suppor
  - [Marina Ferreira](https://www.youtube.com/watch?v=ZniVgo8U7ek&t=764s&ab_channel=freeCodeCamp.org) that taught me in her videos how to flip, unflip and match the cards.
  - [W3 Schools](https://www.w3schools.com/jsref/met_element_addeventlistener.asp) for understanding Event Listeners. 
  - [W3 Schools](https://www.w3schools.com/js/js_array_sort.asp) for understanding The Fisher Yates method.
- - [Stack Overflow](https://stackoverflow.com/questions/58627457/disable-all-clicks-on-page-for-a-couple-of-seconds-after-a-function-is-run) for understanding how to freeze the click event listener.
+ - [Stack Overflow](https://stackoverflow.com/questions/58627457/disable-all-clicks-on-page-for-a-couple-of-seconds-after-a-function-is-run) for understanding how to freeze the board.
 
 ### Acknowledgment
 
