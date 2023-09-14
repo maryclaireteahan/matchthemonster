@@ -43,6 +43,8 @@ let cards = document.getElementsByClassName("card");
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
+// True to enable, false to disable clicks,
+let freezeClicks = false;
 
 //Restart
 let restartBtn = document.getElementById("restart-btn");
@@ -50,7 +52,6 @@ let restartBtn = document.getElementById("restart-btn");
 //Event Listeners
 rulesBtn.addEventListener("click", rulesBtnClick);
 restartBtn.addEventListener("click", reset);
-
 
 //Rules 
 /** Function opens the Rules div
@@ -91,7 +92,10 @@ function rulesBtnClick(event) {
     rules.appendChild(closeBtn);
     closeBtn.innerHTML = "Close";
 
-    //Remove element when close button clicked and reenable rules button
+    /**
+     * Function is run when button is clicked. 
+     * It removes the Rules div.
+     */
     function closeBtnClick(event) {
         rulesDiv.removeChild(rules);
         document.getElementById("rules-btn").disabled = false;
@@ -143,7 +147,8 @@ for (let monster of monsters) {
 
 //Timer
 
-/** Function starts timer when first card is clicked
+/** 
+ * Function starts timer when first card is clicked and increments by 1 every second
  */
 function startTimer() {
     if (timerStarted) return;
@@ -157,16 +162,20 @@ function startTimer() {
 
 // Flip Cards
 
-// To enable or disable clicks, just change the value of freezeClick
-
-/**Function for flipping cards
- * 
- * @returns 
+/**
+ * Function for flipping cards
+ * When the first card is flipped the timer starts.
+ * Each card flip is counted as a move which increments by one.
+ * When the second card is flipped, if there is no match, the board is locked for 1 sec, the same time it takes to unflip the cards.
+ * checkForMatch function is run.
  */
 function flipCard() {
     // Check if the card is already flipped
     if (this.isFlipped) return;
- 
+
+    // Check if the click events are frozen
+    if (freezeClicks) return;
+
     // Set the card state to flipped
     this.isFlipped = true;
 
@@ -188,18 +197,21 @@ function flipCard() {
     }
 
     //Second click
-    
-    secondCard = this
-    for (let card of cards) {
-        card.removeEventListener("click", flipCard);
-    }
-    checkForMatch()
-    for (let card of cards) {
-        card.addEventListener("click", flipCard);
-    }
+
+    secondCard = this;
+
+    freezeClicks = true;
+
+    checkForMatch();
 }
 
-//Function to see if the two selected cards match
+/**
+ * Function to see if the two selected cards match
+ * Checks the dataName for both cards and checks to see if whether or not they are the same.
+ * If they are the same a div element will pop up giving the user their score of time and moves.
+ * If the cards match disableCards() is called and freezeClicks set to false in order to allow clicks again.
+ * If the cards don't match the cards are flipped back.
+*/
 function checkForMatch() {
 
     let firstDataName = firstCard.children[0].dataset.dataName;
@@ -213,8 +225,10 @@ function checkForMatch() {
     const result = document.createElement("p");
     const closeBtn = document.createElement("button");
 
-    if (isMatch) { disableCards(); } else { unflipCards(); }
-   
+    if (isMatch) {
+        disableCards(); freezeClicks = false;
+    } else { unflipCards(); }
+
     //You Win popup when game is over
     if (document.querySelectorAll('.flip').length === cards.length) {
         clearInterval(timerId); // stop the timer
@@ -232,13 +246,21 @@ function checkForMatch() {
         youWinDiv.appendChild(closeBtn);
         closeBtn.innerHTML = "Close";
     }
-
+    /** 
+     * Function is run when button is clicked. 
+     * It removes the You Win div.
+    */
     function closeBtnClick(event) {
         popUp.removeChild(youWinDiv);
     }
     closeBtn.addEventListener("click", closeBtnClick);
 }
 
+/**
+ * Function is run when the pair of cards match.
+ * It stops the cards from being clicked again.
+ * The board is then reset and the next pair is ready to be chosen.
+ */
 function disableCards() {
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
@@ -248,8 +270,18 @@ function disableCards() {
 
     resetBoard();
 }
+
+/**
+ * Function is run when the pair of cards don't match.
+ * The board is set to be locked for one second.
+ * The selected cards flip back in one second.
+ * The board is then reset and the next pair is ready to be chosen.
+ */
 function unflipCards() {
     lockBoard = true;
+
+    setTimeout(() => freezeClicks = false, 1000);
+
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
@@ -264,7 +296,6 @@ function unflipCards() {
 /**
  * Resets board back to how it was before the last two clicks
  * flips the cards back over and sets their values to null
- * 
  */
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
@@ -276,7 +307,9 @@ for (let card of cards) {
 }
 
 //Restart Button
-/** Refreshes the web browser when the user selects "Restart" */
+/** Refreshes the web browser when the user selects "Restart"
+ */
 function reset() {
     location.reload();
 }
+

@@ -210,6 +210,10 @@ The rules pop-up consisted of a numbered list of rules for the game. It also fea
 
   - I wanted to include a restart button. When I would press it the cards would flip back over but they wouldn't shuffle, also the timer would start immediately rather than from my first move. I edited the button so that the page reloads when it is pressed.
 
+Cards bug
+
+ - In order to make a match you need to click the first card to flip it and then the second card to flip it. If they don't match they flip back after 1 second and you can move onto your next choices. However, if you manage to click a third and fourth card before the first two cards flip back, it will disable the last two cards clicked. They will remain disabled so the user will be unable to finish the game. I had trouble fixing the bug by removing and reenabling the event listener. I researched my options and saw that I could freeze the clicks by locking the board for the same amount of time as it takes the cards to flip back, 1 sec.
+
 
 ### Validator Testing 
 
@@ -237,7 +241,6 @@ The rules pop-up consisted of a numbered list of rules for the game. It also fea
 ### Unfixed Bugs
 
 - When checking the responsiveness on https://ui.dev/amiresponsive I spotted that on the largest screen, 1600x992px, when the bottom right card is selected it doesn't flip. 
-- In order to make a match you need to click the first card to flip it and then the second card to flip it. If they don't match they flip back after 1 second and you can move onto your next choices. However, if you manage to click a third and fourth card before the first two cards flip back, it will disable the last two cards clicked. They will remain disabled so the user will be unable to finish the game. 
 
 ### How this site was deployed
 
@@ -276,6 +279,7 @@ I have consulted numerous websites, individuals and slack channels to get suppor
  - [Marina Ferreira](https://www.youtube.com/watch?v=ZniVgo8U7ek&t=764s&ab_channel=freeCodeCamp.org) that taught me in her videos how to flip, unflip and match the cards.
  - [W3 Schools](https://www.w3schools.com/jsref/met_element_addeventlistener.asp) for understanding Event Listeners. 
  - [W3 Schools](https://www.w3schools.com/js/js_array_sort.asp) for understanding The Fisher Yates method.
+ - [Stack Overflow](https://stackoverflow.com/questions/58627457/disable-all-clicks-on-page-for-a-couple-of-seconds-after-a-function-is-run) for understanding how to freeze the click event listener.
 
 ### Acknowledgment
 
