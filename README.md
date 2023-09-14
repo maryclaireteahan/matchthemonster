@@ -157,7 +157,7 @@ The rules pop-up consisted of a numbered list of rules for the game. It also fea
 
 ![Rules](/readme/documentation/supp-images/site/rules.png)
 
-### Features Left to Implement
+### Features left to Implement
 
 - Future version of this game will allow the player to input their name and have their score listed on a score board.
 - When a pair of monsters have been matched a scary sound effect will play. Each monster will have their own sound for example, a sinsiter laugh will play when the evil clown cards are matched, a ghostly wail when the ghost cards are matched.
